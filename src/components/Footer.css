@@ -1,0 +1,155 @@
+.footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 60px 0 20px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 50px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr; /* Laptop par 4 columns */
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 40px;
+  height: 2px;
+  background-color: #e67e22; /* Primary color */
+}
+
+.footer-logo {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.footer-logo span {
+  color: #e67e22;
+}
+
+.footer-section p {
+  color: #bbb;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+  color: #bbb;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #e67e22;
+  padding-left: 5px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #fff;
+  background: #333;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #e67e22;
+}
+
+.newsletter {
+  display: flex;
+  margin-top: 15px;
+}
+
+.newsletter input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  width: 100%;
+  outline: none;
+}
+
+.newsletter button {
+  padding: 10px 15px;
+  background-color: #e67e22;
+  border: none;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+@media (max-width: 992px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr; /* Tablet par 2 columns */
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Mobile par 1 column */
+    text-align: center;
+  }
+
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter input, .newsletter button {
+    border-radius: 4px;
+  }
+}
