@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Bathroom.css"; // same styling reuse kar rahe hain
 
 function Kitchen() {
   const [products, setProducts] = useState([]);
@@ -11,45 +10,38 @@ function Kitchen() {
     const fetchKitchenTiles = async () => {
       try {
         const res = await axios.get("http://localhost:5000/api/products/all");
-
-        // 🔥 Sirf KITCHEN category filter
-        const filtered = res.data.filter(
-          tile => tile.category === "KITCHEN"
-        );
-
+        const filtered = res.data.filter(tile => tile.category === "KITCHEN");
         setProducts(filtered);
       } catch (err) {
         console.error("Data laane mein error:", err);
       }
     };
-
     fetchKitchenTiles();
   }, []);
 
   return (
-    <div className="bathroom-page container">
-      <h2 className="page-title">Kitchen Tiles Collection</h2>
-
-      <div className="product-grid">
+    <div className="max-w-[1250px] mx-auto px-4 py-10">
+      <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">Kitchen Tiles Collection</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
         {products.map((item) => (
           <div
             key={item._id}
-            className="p-card"
+            className="bg-white border border-gray-100 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             onClick={() => navigate(`/product/${item._id}`)}
           >
-            <div className="p-img">
+            <div>
               <img
                 src={item.images?.[0]}
                 alt={item.name}
+                className="w-full aspect-square object-cover"
               />
             </div>
-
-            <div className="p-info">
-              <h3>{item.name}</h3>
-              <p className="p-size">{item.size}</p>
-              <p className="p-price">
+            <div className="p-4">
+              <h3 className="text-base font-semibold text-gray-900 mb-1 truncate">{item.name}</h3>
+              <p className="text-sm text-gray-500 mb-2">{item.size}</p>
+              <p className="text-base font-bold text-orange-500">
                 ₹{item.priceSqFt}/Sq.Ft
-                <span> Or ₹{item.priceBox}/Box</span>
+                <span className="block text-xs text-gray-400 font-normal mt-0.5">Or ₹{item.priceBox}/Box</span>
               </p>
             </div>
           </div>

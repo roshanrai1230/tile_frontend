@@ -1,20 +1,6 @@
-    /* CSS Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import "tailwindcss";
 
-html, body {
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
+/* DEBUG: Body should be light red if CSS is loading */
+body {
+    background-color: #fffaf0;
 }

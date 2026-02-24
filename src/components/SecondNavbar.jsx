@@ -1,15 +1,32 @@
-function SecondNavbar() {
-  const items = [
-    "All Tiles", "Floor", "Wall", "Bathroom", "Kitchen", 
-    "Living Room", "Outdoor", "Parking", "Ceramic", "Stone"
-  ];
+import { Link } from "react-router-dom";
 
+const items = [
+  { name: "All Tiles", link: "/" },
+  { name: "Floor", link: "/category/FLOOR" },
+  { name: "Wall", link: "/category/WALL" },
+  { name: "Bathroom", link: "/category/BATHROOM" },
+  { name: "Kitchen", link: "/category/KITCHEN" },
+  { name: "Living Room", link: "/category/LIVING ROOM" },
+  { name: "Outdoor", link: "/category/OUTDOOR" },
+  { name: "Parking", link: "/category/PARKING" },
+  { name: "Ceramic", link: "/category/CERAMIC" },
+  { name: "Stone", link: "/category/STONE" },
+];
+
+function SecondNavbar() {
   return (
-    <div className="secondary-nav">
-      <div className="container">
-        <ul className="scroll-menu">
+    <div className="bg-[#1a1a1a] py-2.5">
+      <div className="max-w-[1250px] mx-auto px-4">
+        <ul className="flex gap-6 overflow-x-auto scrollbar-none list-none m-0 p-0 [&::-webkit-scrollbar]:hidden">
           {items.map((item, index) => (
-            <li key={index}><a href="#">{item}</a></li>
+            <li key={index} className="shrink-0">
+              <Link
+                to={item.link}
+                className="text-white text-sm font-bold whitespace-nowrap no-underline hover:text-orange-400 transition-colors duration-200"
+              >
+                {item.name}
+              </Link>
+            </li>
           ))}
         </ul>
       </div>

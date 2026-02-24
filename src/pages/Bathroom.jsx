@@ -1,19 +1,15 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Bathroom.css";
 
 function Bathroom() {
-  const [products, setProducts] = useState([]); // Database se data yahan aayega
+  const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Database se data lene ka function
     const fetchBathroomTiles = async () => {
       try {
         const res = await axios.get("http://localhost:5000/api/products/all");
-        // 🔥 Yahan filter lagayenge: Sirf wo tiles jo BATHROOM category ki hain
         const filtered = res.data.filter(tile => tile.category === "BATHROOM");
         setProducts(filtered);
       } catch (err) {
@@ -24,23 +20,28 @@ function Bathroom() {
   }, []);
 
   return (
-    <div className="bathroom-page container">
-      <h2 className="page-title">Bathroom Tiles Collection</h2>
-      <div className="product-grid">
+    <div className="max-w-[1250px] mx-auto px-4 py-10">
+      <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">Bathroom Tiles Collection</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
         {products.map((item) => (
-          <div 
-            key={item._id} // MongoDB ki ID '_id' hoti hai
-            className="p-card" 
-            onClick={() => navigate(`/product/${item._id}`)} // Click par detail page
+          <div
+            key={item._id}
+            className="bg-white border border-gray-100 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            onClick={() => navigate(`/product/${item._id}`)}
           >
-            <div className="p-img">
-              <img src={item.images && item.images[0]} alt={item.name} />
+            <div>
+              <img
+                src={item.images && item.images[0]}
+                alt={item.name}
+                className="w-full aspect-square object-cover"
+              />
             </div>
-            <div className="p-info">
-              <h3>{item.name}</h3>
-              <p className="p-size">{item.size}</p>
-              <p className="p-price">
-                ₹{item.priceSqFt}/Sq.Ft <span>Or ₹{item.priceBox}/Box</span>
+            <div className="p-4">
+              <h3 className="text-base font-semibold text-gray-900 mb-1 truncate">{item.name}</h3>
+              <p className="text-sm text-gray-500 mb-2">{item.size}</p>
+              <p className="text-base font-bold text-orange-500">
+                ₹{item.priceSqFt}/Sq.Ft
+                <span className="block text-xs text-gray-400 font-normal mt-0.5">Or ₹{item.priceBox}/Box</span>
               </p>
             </div>
           </div>

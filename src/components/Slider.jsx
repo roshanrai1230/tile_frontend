@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import "./Slider.css";
+import React, { useState, useEffect } from "react";
 
 const slides = [
   { id: 1, image: "https://content.iconworldoftile.com/content/slider/slider-7.jpg", title: "Slide 1" },
@@ -10,50 +9,63 @@ const slides = [
 
 function Slider() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const slideRef = useRef(null);
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  };
+  const nextSlide = () => setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
-  // Auto slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="slider" ref={slideRef}>
+    <div className="relative w-full my-2.5 overflow-hidden rounded-lg">
+      {/* Slides track */}
       <div
-        className="slider-inner"
+        className="flex transition-transform duration-500 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {slides.map((slide) => (
-          <div className="slide" key={slide.id}>
-            <img src={slide.image} alt={slide.title} />
-            <div className="caption">{slide.title}</div>
+          <div key={slide.id} className="min-w-full relative">
+            <img
+              src={slide.image}
+              alt={slide.title}
+              className="w-full h-[60vh] object-cover block rounded-lg select-none"
+            />
+            <div className="absolute bottom-3 left-5 text-white bg-black/50 px-4 py-2 rounded text-base md:text-sm">
+              {slide.title}
+            </div>
           </div>
         ))}
       </div>
 
-      <button className="prev" onClick={prevSlide} aria-label="Previous Slide">
+      {/* Prev Button */}
+      <button
+        onClick={prevSlide}
+        aria-label="Previous Slide"
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/40 hover:bg-black/80 text-white text-3xl md:text-2xl px-3 py-2 rounded-full border-0 cursor-pointer z-10 transition-colors duration-300 select-none"
+      >
         &#10094;
       </button>
-      <button className="next" onClick={nextSlide} aria-label="Next Slide">
+
+      {/* Next Button */}
+      <button
+        onClick={nextSlide}
+        aria-label="Next Slide"
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/40 hover:bg-black/80 text-white text-3xl md:text-2xl px-3 py-2 rounded-full border-0 cursor-pointer z-10 transition-colors duration-300 select-none"
+      >
         &#10095;
       </button>
 
-      <div className="dots">
+      {/* Dots */}
+      <div className="text-center py-4">
         {slides.map((_, idx) => (
           <span
             key={idx}
-            className={`dot ${idx === currentIndex ? "active" : ""}`}
             onClick={() => setCurrentIndex(idx)}
             aria-label={`Go to slide ${idx + 1}`}
+            className={`inline-block w-3 h-3 mx-1.5 rounded-full cursor-pointer transition-colors duration-300 ${idx === currentIndex ? "bg-gray-600" : "bg-gray-300"
+              }`}
           />
         ))}
       </div>
