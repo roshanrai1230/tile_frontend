@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import bathroomImg from "../assets/images/bathroom.webp";
 import kitchenImg from "../assets/images/kitchen.webp";
