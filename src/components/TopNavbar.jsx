@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { HiOutlineSearch, HiOutlineUser, HiOutlineShoppingCart, HiMenu, HiX } from "react-icons/hi";
+import { HiOutlineSearch, HiOutlineUser, HiOutlineShoppingCart, HiOutlineHeart, HiMenu, HiX } from "react-icons/hi";
 import { useCart } from "../context/CartContext";
 
 function TopNavbar() {
@@ -45,10 +45,16 @@ function TopNavbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-5">
-            <div className="hidden md:flex flex-col items-center text-xs cursor-pointer">
-              <HiOutlineUser className="text-xl" />
+            <div className="hidden md:flex flex-col items-center text-xs cursor-pointer group">
+              <HiOutlineUser className="text-xl group-hover:text-orange-500 transition-colors" />
               <span>Login</span>
             </div>
+
+            <div className="hidden md:flex flex-col items-center text-xs cursor-pointer group">
+              <HiOutlineHeart className="text-xl group-hover:text-orange-500 transition-colors" />
+              <span>Wishlist</span>
+            </div>
+
             <Link to="/cart" className="flex flex-col items-center text-xs cursor-pointer relative no-underline text-gray-900 group">
               <HiOutlineShoppingCart className="text-xl group-hover:text-orange-500 transition-colors" />
               <span>Cart</span>

@@ -3,6 +3,10 @@ import TopNavbar from "./components/TopNavbar";
 import SecondNavbar from "./components/SecondNavbar";
 import Slider from "./components/Slider";
 import Footer from "./components/Footer";
+import LeadFormModal from "./components/LeadFormModal";
+import ShopByRoom from "./components/ShopByRoom";
+import BrandTrust from "./components/BrandTrust";
+import FeaturedProducts from "./components/FeaturedProducts";
 import TilesCategory from "./pages/TilesCategory";
 import CategoryPage from "./pages/CategoryPage";
 import ProductDetails from "./pages/ProductDetails";
@@ -35,6 +39,7 @@ function AppContent() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <LeadFormModal />
       <header className="sticky top-0 z-[1000] w-full shadow-sm">
         <TopNavbar />
         <SecondNavbar />
@@ -42,11 +47,14 @@ function AppContent() {
 
       <main className="flex-1">
         <Routes>
-          {/* Home Page: Yahan Slider aur Categories dono dikhenge */}
+          {/* Home Page: Yahan Sab Sections dikhenge */}
           <Route path="/" element={
             <>
               <Slider />
               <TilesCategory />
+              <ShopByRoom />
+              <BrandTrust />
+              <FeaturedProducts />
             </>
           } />
 
