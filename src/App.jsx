@@ -7,11 +7,14 @@ import LeadFormModal from "./components/LeadFormModal";
 import ShopByRoom from "./components/ShopByRoom";
 import BrandTrust from "./components/BrandTrust";
 import FeaturedProducts from "./components/FeaturedProducts";
+import Testimonials from "./components/Testimonials";
+import Newsletter from "./components/Newsletter";
 import TilesCategory from "./pages/TilesCategory";
 import CategoryPage from "./pages/CategoryPage";
 import ProductDetails from "./pages/ProductDetails";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
+import AboutUs from "./pages/AboutUs";
 
 
 // Admin
@@ -53,13 +56,18 @@ function AppContent() {
               <Slider />
               <TilesCategory />
               <ShopByRoom />
-              <BrandTrust />
               <FeaturedProducts />
+              <BrandTrust />
+              <Testimonials />
+              <Newsletter />
             </>
           } />
 
           {/* Dynamic Category Route */}
           <Route path="/category/:categoryName" element={<CategoryPage />} />
+
+          {/* About Us */}
+          <Route path="/about-us" element={<AboutUs />} />
 
           {/* Compatibility Redirects (Optional if we update navs) */}
           <Route path="/bathroom" element={<CategoryPage />} />

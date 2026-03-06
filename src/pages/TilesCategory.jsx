@@ -21,31 +21,36 @@ function TilesCategory() {
   const navigate = useNavigate();
 
   return (
-    <section className="py-12 px-4 max-w-[1250px] mx-auto">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-800 mb-3">Find Tiles by Category</h2>
-        <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nulla amet recusandae,
-          soluta corrupti sequi veritatis? Explicabo incidunt hic architecto.
+    <section className="py-20 px-4 max-w-[1250px] mx-auto uppercase tracking-tight">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-extrabold text-[#1a1a1a] mb-4">
+          Browse by <span className="text-orange-500">Category</span>
+        </h2>
+        <div className="w-16 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
+        <p className="text-gray-500 max-w-2xl mx-auto font-medium leading-relaxed">
+          Exquisite tiles categorized for your convenience. From elegant bathroom marbles to rugged outdoor stones, find the perfect match for your vision.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
         {categories.map((cat, index) => (
-          <div
+          <motion.div
             key={index}
+            whileHover={{ y: -8 }}
             className="cursor-pointer group text-center"
             onClick={() => navigate(cat.link)}
           >
-            <div className="overflow-hidden rounded-xl aspect-square mb-3">
+            <div className="overflow-hidden rounded-2xl aspect-square mb-4 shadow-sm group-hover:shadow-2xl transition-all duration-500">
               <img
                 src={cat.image}
                 alt={cat.name}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
-            <h3 className="text-sm font-bold text-gray-700 tracking-wide">{cat.name}</h3>
-          </div>
+            <h3 className="text-xs font-black text-[#1a1a1a] tracking-widest group-hover:text-orange-500 transition-colors">
+              {cat.name}
+            </h3>
+          </motion.div>
         ))}
       </div>
     </section>
