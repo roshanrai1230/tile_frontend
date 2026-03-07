@@ -129,7 +129,7 @@ function TopNavbar() {
           <div className="hidden md:flex items-center gap-5">
             <div className="relative">
               {user ? (
-                <div 
+                <div
                   className="flex items-center gap-1.5 text-gray-700 hover:text-gray-900 text-sm transition-colors cursor-pointer"
                   onMouseEnter={() => setProfileOpen(true)}
                   onMouseLeave={() => setProfileOpen(false)}
@@ -138,7 +138,7 @@ function TopNavbar() {
                     {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
                   </div>
                   <span className="text-xs font-bold">{user.name?.split(' ')[0] || 'User'}</span>
-                  
+
                   {/* Profile Dropdown */}
                   {profileOpen && (
                     <div className="absolute top-full right-0 mt-2 bg-white border border-gray-200 rounded-xl shadow-xl w-48 py-2 z-50">
@@ -146,7 +146,7 @@ function TopNavbar() {
                         <p className="text-xs text-gray-500">Signed in as</p>
                         <p className="text-sm font-bold text-gray-900 truncate">{user.email}</p>
                       </div>
-                      <button 
+                      <button
                         onClick={() => { logout(); setProfileOpen(false); }}
                         className="w-full text-left px-4 py-2 text-sm text-red-600 font-semibold hover:bg-red-50 transition-colors"
                       >
@@ -267,9 +267,8 @@ function TopNavbar() {
         />
       )}
       <div
-        className={`fixed top-0 left-0 h-full w-72 bg-white z-[2000] shadow-2xl transition-transform duration-300 ${
-          isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 h-full w-72 bg-white z-[2000] shadow-2xl transition-transform duration-300 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
           <Link to="/" className="text-xl font-black tracking-tighter text-gray-900 no-underline" onClick={() => setIsMenuOpen(false)}>
