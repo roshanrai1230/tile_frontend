@@ -1,42 +1,104 @@
-import React from "react";
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { HiOutlineMail, HiOutlinePhone, HiOutlineLocationMarker, HiArrowRight } from "react-icons/hi";
 
 const Footer = () => {
-  return (
-    <footer className="bg-[#1a1a1a] text-white pt-16 pb-5 mt-12 font-sans">
-      <div className="max-w-[1200px] mx-auto px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_2fr] gap-10">
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
 
-        {/* Section 1: Brand */}
-        <div>
-          <h2 className="text-3xl font-bold tracking-widest mb-5">
-            Mytile<span className="text-orange-500">.</span>
-          </h2>
-          <p className="text-gray-400 leading-relaxed text-sm">
-            India's No. 1 tile company. We provide premium quality wall and floor tiles
-            with world-class designs for your dream spaces.
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setEmail("");
+    }
+  };
+
+  return (
+    <footer className="bg-[#111111] text-white mt-16 font-sans">
+
+      {/* Top Banner */}
+      <div className="bg-orange-500 py-4 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-white font-bold text-sm tracking-wide text-center">
+            🏠 India's No.1 Premium Tile Brand — Free Delivery on Orders Above ₹10,000
           </p>
-          <div className="flex gap-4 mt-5">
-            {[FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn].map((Icon, i) => (
+          <a href="/contact" className="shrink-0 bg-white text-orange-600 font-black text-xs px-5 py-2 rounded-full hover:bg-orange-50 transition-colors">
+            Get a Free Quote →
+          </a>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="max-w-6xl mx-auto px-6 pt-14 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+        {/* Brand Column */}
+        <div className="lg:col-span-1">
+          <h2 className="text-3xl font-black tracking-tight mb-4">
+            My<span className="text-orange-500">Tiles</span>
+          </h2>
+          <p className="text-gray-400 text-sm leading-relaxed mb-6">
+            Premium quality wall and floor tiles with world-class designs. Transforming your dream spaces since 2010.
+          </p>
+
+          {/* Contact Info */}
+          <div className="space-y-2.5 mb-6">
+            <p className="flex items-center gap-2.5 text-gray-400 text-sm">
+              <HiOutlinePhone className="text-orange-500 shrink-0 text-base" />
+              1800-123-4567 (Toll Free)
+            </p>
+            <p className="flex items-center gap-2.5 text-gray-400 text-sm">
+              <HiOutlineMail className="text-orange-500 shrink-0 text-base" />
+              info@mytiles.com
+            </p>
+            <p className="flex items-center gap-2.5 text-gray-400 text-sm">
+              <HiOutlineLocationMarker className="text-orange-500 shrink-0 text-base" />
+              New Delhi, India — 110001
+            </p>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex gap-3">
+            {[
+              { Icon: FaFacebookF, href: "#" },
+              { Icon: FaInstagram, href: "#" },
+              { Icon: FaTwitter, href: "#" },
+              { Icon: FaLinkedinIn, href: "#" },
+              { Icon: FaYoutube, href: "#" },
+            ].map(({ Icon, href }, i) => (
               <a
                 key={i}
-                href="#"
-                className="w-9 h-9 bg-[#333] rounded-full flex items-center justify-center text-white hover:bg-orange-500 transition-colors duration-300"
+                href={href}
+                className="w-9 h-9 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300"
               >
-                <Icon />
+                <Icon className="text-sm" />
               </a>
             ))}
           </div>
         </div>
 
-        {/* Section 2: Quick Links */}
+        {/* Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-8 relative after:absolute after:left-0 after:-bottom-2 after:w-10 after:h-0.5 after:bg-orange-500">
+          <h3 className="text-sm font-black uppercase tracking-widest text-white mb-5 pb-2 border-b border-white/10">
             Quick Links
           </h3>
           <ul className="space-y-3">
-            {[["Home", "/"], ["About Us", "/about"], ["Contact", "/contact"], ["Careers", "/career"]].map(([label, href]) => (
+            {[
+              ["Home", "/"],
+              ["About Us", "/about"],
+              ["Products", "/products"],
+              ["Contact", "/contact"],
+              ["Careers", "/careers"],
+              ["Admin Panel", "/admin/login"],
+            ].map(([label, href]) => (
               <li key={href}>
-                <a href={href} className="text-gray-400 text-sm hover:text-orange-500 hover:pl-1.5 transition-all duration-300 no-underline">
+                <a
+                  href={href}
+                  className="text-gray-400 text-sm hover:text-orange-400 hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"
+                >
+                  <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200">
+                    <HiArrowRight className="text-orange-400 text-xs" />
+                  </span>
                   {label}
                 </a>
               </li>
@@ -44,15 +106,29 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Section 3: Categories */}
+        {/* Categories */}
         <div>
-          <h3 className="text-lg font-semibold mb-8 relative after:absolute after:left-0 after:-bottom-2 after:w-10 after:h-0.5 after:bg-orange-500">
+          <h3 className="text-sm font-black uppercase tracking-widest text-white mb-5 pb-2 border-b border-white/10">
             Categories
           </h3>
           <ul className="space-y-3">
-            {[["Bathroom", "/bathroom"], ["Kitchen", "/kitchen"], ["Living Room", "/livingroom"], ["Outdoor", "/outdoor"]].map(([label, href]) => (
-              <li key={href}>
-                <a href={href} className="text-gray-400 text-sm hover:text-orange-500 hover:pl-1.5 transition-all duration-300 no-underline">
+            {[
+              ["Bathroom Tiles", "/"],
+              ["Kitchen Tiles", "/"],
+              ["Living Room", "/"],
+              ["Floor Tiles", "/"],
+              ["Wall Tiles", "/"],
+              ["Outdoor & Parking", "/"],
+              ["Bedroom Tiles", "/"],
+            ].map(([label, href]) => (
+              <li key={label}>
+                <a
+                  href={href}
+                  className="text-gray-400 text-sm hover:text-orange-400 hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"
+                >
+                  <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200">
+                    <HiArrowRight className="text-orange-400 text-xs" />
+                  </span>
                   {label}
                 </a>
               </li>
@@ -60,29 +136,70 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Section 4: Contact */}
+        {/* Newsletter */}
         <div>
-          <h3 className="text-lg font-semibold mb-8 relative after:absolute after:left-0 after:-bottom-2 after:w-10 after:h-0.5 after:bg-orange-500">
-            Contact Us
+          <h3 className="text-sm font-black uppercase tracking-widest text-white mb-5 pb-2 border-b border-white/10">
+            Stay Updated
           </h3>
-          <p className="text-gray-400 text-sm mb-1">Toll Free: 1800-123-4567</p>
-          <p className="text-gray-400 text-sm mb-4">Email: info@kajaria.com</p>
-          <div className="flex mt-4">
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="flex-1 px-3 py-2.5 border-0 rounded-l outline-none text-gray-800"
-            />
-            <button className="px-4 py-2.5 bg-orange-500 text-white rounded-r border-0 cursor-pointer hover:bg-orange-600 transition-colors duration-300">
-              Subscribe
-            </button>
+          <p className="text-gray-400 text-sm mb-5 leading-relaxed">
+            Subscribe for the latest tile collections, design inspiration and exclusive offers.
+          </p>
+
+          {subscribed ? (
+            <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 text-center">
+              <p className="text-green-400 font-bold text-sm">✓ You're subscribed!</p>
+              <p className="text-green-400/70 text-xs mt-1">Thanks for joining MyTiles.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubscribe} className="space-y-3">
+              <div className="relative">
+                <HiOutlineMail className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500 text-base" />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your email address"
+                  required
+                  className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder:text-gray-600 outline-none focus:border-orange-500/60 focus:bg-white/8 transition-all"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl text-sm transition-colors flex items-center justify-center gap-2"
+              >
+                Subscribe Now
+                <HiArrowRight />
+              </button>
+            </form>
+          )}
+
+          {/* Trust Badges */}
+          <div className="mt-6 flex gap-3 flex-wrap">
+            {["ISO Certified", "100% Original", "Pan India Delivery"].map((badge) => (
+              <span key={badge} className="text-[10px] font-bold text-gray-500 bg-white/5 border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                {badge}
+              </span>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className="text-center mt-12 pt-5 border-t border-[#333] text-xs text-gray-500">
-        <p>© 2024 Mytile. All Rights Reserved. | Designed with ❤️</p>
+      {/* Bottom Bar */}
+      <div className="border-t border-white/8 px-6 py-5">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-gray-600 text-center">
+            © 2025 MyTiles. All Rights Reserved. Crafted with ❤️ in India.
+          </p>
+          <div className="flex gap-5">
+            {["Privacy Policy", "Terms of Use", "Sitemap"].map((link) => (
+              <a key={link} href="#" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">
+                {link}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
+
     </footer>
   );
 };
