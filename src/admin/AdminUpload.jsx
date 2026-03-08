@@ -176,7 +176,7 @@ function AdminUpload() {
                             <div className="flex items-center gap-4">
                               <div className="w-12 h-12 rounded-lg bg-slate-100 border border-slate-200 overflow-hidden shrink-0">
                                 {prod.images && prod.images.length > 0 ? (
-                                  <img src={`http://localhost:5000/${prod.images[0]}`} alt={prod.name} className="w-full h-full object-cover" crossOrigin="anonymous"/>
+                                  <img src={`https://tile-backend-n9ps.onrender.com/${prod.images[0]}`} alt={prod.name} className="w-full h-full object-cover" crossOrigin="anonymous"/>
                                 ) : (
                                   <div className="w-full h-full flex items-center justify-center text-slate-300 text-xs">No img</div>
                                 )}
