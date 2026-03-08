@@ -14,7 +14,7 @@ function CategoryPage() {
         const fetchProducts = async () => {
             setLoading(true);
             try {
-                const res = await axios.get("https://tile-backend-n9ps.onrender.com/api/products/all");
+                const res = await axios.get("https://tile-backend-6xtp.onrender.com/api/products/all");
                 // Filter by category (case-insensitive check but comparing with uppercase slugs)
                 const filtered = res.data.filter(
                     (tile) => tile.category.toUpperCase() === categoryName.toUpperCase()

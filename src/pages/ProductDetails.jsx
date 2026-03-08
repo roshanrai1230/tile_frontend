@@ -18,7 +18,7 @@ const ProductDetails = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`https://tile-backend-n9ps.onrender.com/api/products/${id}`);
+        const res = await axios.get(`https://tile-backend-6xtp.onrender.com/api/products/${id}`);
         setProduct(res.data);
         if (res.data.images && res.data.images.length > 0) {
           setActiveImg(res.data.images[0]);

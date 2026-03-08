@@ -11,7 +11,7 @@ import {
 import AdminSidebar from "./AdminSidebar";
 import AdminHeader from "./AdminHeader";
 
-const API = "https://tile-backend-n9ps.onrender.com";
+const API = "https://tile-backend-6xtp.onrender.com";
 
 const AdminDashboard = () => {
   const navigate = useNavigate();

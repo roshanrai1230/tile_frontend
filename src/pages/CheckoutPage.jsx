@@ -47,7 +47,7 @@ const CheckoutPage = () => {
         };
 
         try {
-            await axios.post("https://tile-backend-n9ps.onrender.com/api/orders", orderData);
+            await axios.post("https://tile-backend-6xtp.onrender.com/api/orders", orderData);
             setOrderPlaced(true);
             clearCart();
         } catch (err) {

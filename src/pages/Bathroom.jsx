@@ -9,7 +9,7 @@ function Bathroom() {
   useEffect(() => {
     const fetchBathroomTiles = async () => {
       try {
-        const res = await axios.get("https://tile-backend-n9ps.onrender.com/api/products/all");
+        const res = await axios.get("https://tile-backend-6xtp.onrender.com/api/products/all");
         const filtered = res.data.filter(tile => tile.category === "BATHROOM");
         setProducts(filtered);
       } catch (err) {
