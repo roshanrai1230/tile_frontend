@@ -100,13 +100,13 @@ const ProductDetails = () => {
                 className={`w-full aspect-square rounded-lg overflow-hidden cursor-pointer border-2 transition-colors ${activeImg === img ? "border-orange-500" : "border-gray-200 hover:border-orange-300"
                   }`}
               >
-                <img src={img} alt={`tile-${i}`} className="w-full h-full object-cover" />
+                <img src={img.startsWith('http') ? img : `https://tile-backend-6xtp.onrender.com${img}`} alt={`tile-${i}`} className="w-full h-full object-cover" />
               </div>
             ))}
           </div>
 
           <div className="flex-1 rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white">
-            <img src={activeImg} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+            <img src={activeImg.startsWith('http') ? activeImg : `https://tile-backend-6xtp.onrender.com${activeImg}`} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
           </div>
         </div>
 

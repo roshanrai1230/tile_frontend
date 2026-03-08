@@ -58,7 +58,7 @@ function CartPage() {
                         <div key={`${item._id}-${item.selectedSize}-${item.selectedColor}`} className="bg-white border border-gray-100 rounded-3xl p-5 flex gap-6 shadow-sm hover:shadow-md transition-all group">
                             <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden bg-gray-50 shrink-0 relative border border-gray-50">
                                 <img
-                                    src={item.images && item.images[0]}
+                                    src={item.images && item.images[0] ? (item.images[0].startsWith('http') ? item.images[0] : `https://tile-backend-6xtp.onrender.com${item.images[0]}`) : ""}
                                     alt={item.name}
                                     className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-700"
                                 />
