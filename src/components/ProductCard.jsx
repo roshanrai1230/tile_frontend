@@ -32,8 +32,7 @@ function ProductCard({ product }) {
                 <img
                     src={product.images && product.images[0] ? (product.images[0].startsWith('http') ? product.images[0] : `https://tile-backend-6xtp.onrender.com${product.images[0]}`) : ""}
                     alt={product.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    crossOrigin="anonymous"
+                    className="w-full h-full object-cover"
                 />
                 {/* Hover Overlay Button (Optional) */}
                 <div className="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

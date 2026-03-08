@@ -180,7 +180,6 @@ function AdminUpload() {
                                     src={prod.images[0].startsWith('http') ? prod.images[0] : `https://tile-backend-6xtp.onrender.com${prod.images[0]}`} 
                                     alt={prod.name} 
                                     className="w-full h-full object-cover" 
-                                    crossOrigin="anonymous"
                                   />
                                 ) : (
                                   <div className="w-full h-full flex items-center justify-center text-slate-300 text-xs">No img</div>

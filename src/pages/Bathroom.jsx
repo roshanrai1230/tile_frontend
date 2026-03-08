@@ -31,7 +31,7 @@ function Bathroom() {
           >
             <div>
               <img
-                src={item.images && item.images[0]}
+                src={item.images && item.images[0] ? (item.images[0].startsWith('http') ? item.images[0] : `https://tile-backend-6xtp.onrender.com${item.images[0]}`) : ""}
                 alt={item.name}
                 className="w-full aspect-square object-cover"
               />

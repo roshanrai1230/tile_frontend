@@ -85,7 +85,7 @@ export default function HomePage() {
   // Products fetch
   useEffect(() => {
     axios
-      .get('/api/products/all')
+      .get('https://tile-backend-6xtp.onrender.com/api/products/all')
       .then((res) => {
         setProducts(res.data?.products || res.data || []);
         setLoading(false);
