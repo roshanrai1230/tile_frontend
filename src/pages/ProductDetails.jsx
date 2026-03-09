@@ -64,15 +64,15 @@ const ProductDetails = () => {
       {/* Custom Toast Notification */}
       {showToast && (
         <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 animate-in fade-in slide-in-from-top-4 duration-300">
-          <div className="bg-gray-900 text-white px-6 py-4 rounded-3xl shadow-2xl flex items-center gap-4 border border-gray-800">
-            <HiCheckCircle className="text-orange-500 text-2xl" />
+          <div className="bg-gray-900 text-white px-6 py-4 rounded-none shadow-2xl flex items-center gap-4 border border-gray-800">
+            <HiCheckCircle className="text-blue-600 text-2xl" />
             <div className="flex flex-col">
               <span className="font-black text-sm uppercase tracking-wider italic">Added to Cart!</span>
               <span className="text-[10px] text-gray-400 font-bold">Checkout now or add more variants.</span>
             </div>
             <button
               onClick={() => navigate("/cart")}
-              className="ml-2 bg-orange-500 hover:bg-orange-600 text-white text-[10px] font-black px-4 py-2 rounded-xl transition-all uppercase tracking-widest"
+              className="ml-2 bg-blue-600 hover:bg-black text-white text-[10px] font-black px-4 py-2 rounded-none transition-all uppercase tracking-widest"
             >
               View Cart
             </button>
@@ -82,9 +82,9 @@ const ProductDetails = () => {
 
       {/* Breadcrumb */}
       <div className="text-sm text-gray-400 mb-6 flex items-center gap-2">
-        <span className="hover:text-orange-500 cursor-pointer transition-colors" onClick={() => navigate("/")}>Home</span>
+        <span className="hover:text-blue-600 cursor-pointer transition-colors" onClick={() => navigate("/")}>Home</span>
         <span className="text-xs">&gt;</span>
-        <span className="hover:text-orange-500 cursor-pointer transition-colors capitalize">{product.category?.toLowerCase()}</span>
+        <span className="hover:text-blue-600 cursor-pointer transition-colors capitalize">{product.category?.toLowerCase()}</span>
         <span className="text-xs">&gt;</span>
         <span className="text-gray-900 font-bold">{product.name}</span>
       </div>
@@ -97,7 +97,7 @@ const ProductDetails = () => {
               <div
                 key={i}
                 onClick={() => setActiveImg(img)}
-                className={`w-full aspect-square rounded-lg overflow-hidden cursor-pointer border-2 transition-colors ${activeImg === img ? "border-orange-500" : "border-gray-200 hover:border-orange-300"
+                className={`w-full aspect-square rounded-none overflow-hidden cursor-pointer border-2 transition-colors ${activeImg === img ? "border-blue-600" : "border-gray-200 hover:border-blue-300"
                   }`}
               >
                 <img src={img.startsWith('http') ? img : `https://tile-backend-6xtp.onrender.com${img}`} alt={`tile-${i}`} className="w-full h-full object-cover" />
@@ -105,7 +105,7 @@ const ProductDetails = () => {
             ))}
           </div>
 
-          <div className="flex-1 rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-white">
+          <div className="flex-1 rounded-none overflow-hidden border border-gray-100 shadow-sm bg-white">
             <img src={activeImg.startsWith('http') ? activeImg : `https://tile-backend-6xtp.onrender.com${activeImg}`} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
           </div>
         </div>
@@ -115,8 +115,8 @@ const ProductDetails = () => {
           <div>
             <h1 className="text-3xl font-black text-gray-900 mb-2 leading-tight uppercase tracking-tighter italic">{product.name}</h1>
             <div className="flex items-center gap-4">
-              <span className="bg-gray-900 text-white text-[10px] px-3 py-1 rounded-full font-black uppercase tracking-widest italic">{product.category}</span>
-              <div className="flex items-center gap-1 text-orange-400 text-xs text-sm">
+              <span className="bg-gray-900 text-white text-[10px] px-3 py-1 rounded-none font-black uppercase tracking-widest italic">{product.category}</span>
+              <div className="flex items-center gap-1 text-blue-600 text-xs text-sm">
                 <HiStar /><HiStar /><HiStar /><HiStar /><HiStar />
                 <span className="text-gray-400 font-bold ml-1">5.0 (PREMIUM)</span>
               </div>
@@ -124,7 +124,7 @@ const ProductDetails = () => {
           </div>
 
           {/* Variants Tip Box */}
-          <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-2xl flex items-start gap-3">
+          <div className="bg-blue-50/50 border border-blue-100 p-4 rounded-none flex items-start gap-3">
             <HiOutlineInformationCircle className="text-blue-500 text-xl shrink-0 mt-0.5" />
             <p className="text-[11px] text-blue-700 leading-relaxed font-bold italic">
               <span className="uppercase text-blue-900 block mb-0.5 tracking-widest">Multi-Variant Guide:</span>
@@ -132,10 +132,10 @@ const ProductDetails = () => {
             </p>
           </div>
 
-          <div className="bg-orange-50/50 border border-orange-100 p-5 rounded-3xl">
+          <div className="bg-gray-100 border border-gray-200 p-5 rounded-none">
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl font-black text-orange-600 italic tracking-tighter">₹{product.priceSqFt}</span>
-              <span className="text-sm font-bold text-orange-400 uppercase tracking-widest">/ Sq.Ft</span>
+              <span className="text-3xl font-black text-blue-600 italic tracking-tighter">₹{product.priceSqFt}</span>
+              <span className="text-sm font-bold text-blue-400 uppercase tracking-widest">/ Sq.Ft</span>
             </div>
             {product.priceBox && (
               <div className="text-xs text-gray-500 font-bold mt-1 uppercase tracking-tight">
@@ -149,20 +149,20 @@ const ProductDetails = () => {
             <div>
               <h4 className="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider flex items-center gap-2">
                 Choose Color
-                <span className="text-[10px] text-gray-400 font-black bg-gray-100 px-2 rounded-full py-0.5 italic">{selectedColor}</span>
+                <span className="text-[10px] text-gray-400 font-black bg-gray-100 px-2 rounded-none py-0.5 italic">{selectedColor}</span>
               </h4>
               <div className="flex flex-wrap gap-3">
                 {product.colors.map((color, i) => (
                   <button
                     key={i}
                     onClick={() => setSelectedColor(color)}
-                    className={`group relative flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-black border-2 transition-all uppercase tracking-tighter ${selectedColor === color
-                      ? "border-orange-500 bg-orange-600 text-white shadow-lg shadow-orange-200"
-                      : "border-gray-100 bg-white text-gray-400 hover:border-orange-200 hover:text-orange-500"
+                    className={`group relative flex items-center gap-2 px-4 py-2 rounded-none text-xs font-black border-2 transition-all uppercase tracking-tighter ${selectedColor === color
+                      ? "border-blue-600 bg-blue-600 text-white shadow-lg"
+                      : "border-gray-100 bg-white text-gray-400 hover:border-blue-200 hover:text-blue-600"
                       }`}
                   >
                     <div
-                      className={`w-3 h-3 rounded-full border border-black/10`}
+                      className={`w-3 h-3 rounded-none border border-black/10`}
                       style={{ backgroundColor: color.toLowerCase() }}
                     />
                     {color}
@@ -181,16 +181,16 @@ const ProductDetails = () => {
                   <button
                     key={i}
                     onClick={() => setSelectedSize(s)}
-                    className={`px-5 py-2 rounded-xl text-xs font-black border-2 transition-all uppercase tracking-tighter ${selectedSize === s
-                      ? "border-orange-500 bg-white text-orange-600 shadow-md"
-                      : "border-gray-100 bg-white text-gray-400 hover:border-orange-200 hover:text-orange-500"
+                    className={`px-5 py-2 rounded-none text-xs font-black border-2 transition-all uppercase tracking-tighter ${selectedSize === s
+                      ? "border-blue-600 bg-white text-blue-600 shadow-md"
+                      : "border-gray-100 bg-white text-gray-400 hover:border-blue-200 hover:text-blue-600"
                       }`}
                   >
                     {s}
                   </button>
                 ))
               ) : (
-                <span className="px-5 py-2 rounded-xl text-xs font-black border-2 border-orange-500 bg-white text-orange-600 shadow-md uppercase tracking-tighter">
+                <span className="px-5 py-2 rounded-none text-xs font-black border-2 border-blue-600 bg-white text-blue-600 shadow-md uppercase tracking-tighter">
                   {product.size || "Standard"}
                 </span>
               )}
@@ -201,10 +201,10 @@ const ProductDetails = () => {
           <div>
             <h4 className="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Quantity</h4>
             <div className="flex items-center gap-4">
-              <div className="flex items-center border-2 border-gray-100 rounded-2xl p-1 bg-gray-50/50">
+              <div className="flex items-center border-2 border-gray-100 rounded-none p-1 bg-gray-50/50">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white hover:shadow-sm text-xl font-bold transition-all disabled:opacity-30"
+                  className="w-10 h-10 flex items-center justify-center rounded-none hover:bg-white hover:shadow-sm text-xl font-bold transition-all disabled:opacity-30"
                   disabled={quantity <= 1}
                 >
                   -
@@ -214,7 +214,7 @@ const ProductDetails = () => {
                 </div>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-white hover:shadow-sm text-xl font-bold transition-all"
+                  className="w-10 h-10 flex items-center justify-center rounded-none hover:bg-white hover:shadow-sm text-xl font-bold transition-all"
                 >
                   +
                 </button>
@@ -224,25 +224,25 @@ const ProductDetails = () => {
           </div>
 
           {/* Description */}
-          <div className="bg-gray-50 rounded-3xl p-6 border border-gray-100">
+          <div className="bg-gray-100 rounded-none p-6 border border-gray-200">
             <h4 className="text-[10px] font-black text-gray-400 mb-2 uppercase tracking-widest italic tracking-wider">Description</h4>
             <p className="text-sm text-gray-500 leading-relaxed italic line-clamp-4">{product.description}</p>
           </div>
 
           {/* Action Buttons */}
           <div className="flex gap-4 pt-4">
-            <button className="flex items-center justify-center w-14 h-14 border-2 border-gray-100 rounded-2xl text-gray-400 hover:text-red-500 hover:border-red-100 hover:bg-red-50 transition-all shadow-sm">
+            <button className="flex items-center justify-center w-14 h-14 border-2 border-gray-100 rounded-none text-gray-400 hover:text-red-500 hover:border-red-100 hover:bg-red-50 transition-all shadow-sm">
               <HiOutlineHeart className="text-2xl" />
             </button>
             <button
               onClick={handleAddToCart}
-              className="flex-1 border-2 border-orange-500 text-orange-600 font-black py-4 rounded-2xl hover:bg-orange-50 transition-all uppercase tracking-widest text-xs shadow-sm hover:shadow-orange-100"
+              className="flex-1 border-2 border-blue-600 text-blue-600 font-black py-4 rounded-none hover:bg-blue-50 transition-all uppercase tracking-widest text-xs shadow-sm"
             >
               Add to Cart
             </button>
             <button
               onClick={handleBuyNow}
-              className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-black py-4 rounded-2xl transition-all shadow-xl shadow-orange-950/20 uppercase tracking-widest text-xs hover:scale-[1.02] active:scale-[0.98]"
+              className="flex-1 bg-blue-600 hover:bg-black text-white font-black py-4 rounded-none transition-all shadow-xl uppercase tracking-widest text-xs hover:scale-[1.02] active:scale-[0.98]"
             >
               Buy Now
             </button>

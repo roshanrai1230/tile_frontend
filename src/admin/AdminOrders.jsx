@@ -39,7 +39,7 @@ const AdminOrders = () => {
                     <td className="px-5 py-3 font-semibold text-gray-700">{order.id}</td>
                     <td className="px-5 py-3 text-gray-600">{order.customer}</td>
                     <td className="px-5 py-3 text-gray-600">{order.product}</td>
-                    <td className="px-5 py-3 font-semibold text-orange-500">{order.total}</td>
+                    <td className="px-5 py-3 font-semibold text-blue-600">{order.total}</td>
                     <td className="px-5 py-3">
                       <span className={`px-3 py-1 rounded-full text-xs font-bold ${statusStyle[order.status] || "bg-gray-100 text-gray-600"}`}>
                         {order.status}

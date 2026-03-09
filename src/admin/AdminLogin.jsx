@@ -42,7 +42,7 @@ const AdminLogin = () => {
       {/* Logo Area */}
       <div className="mb-8 text-center">
         <h1 className="text-4xl font-black text-slate-900 tracking-tight">
-          MY<span className="text-orange-500">TILES</span>
+          MY<span className="text-blue-600">TILES</span>
         </h1>
         <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mt-1">Admin Portal</p>
       </div>
@@ -71,7 +71,7 @@ const AdminLogin = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors text-slate-800 bg-slate-50 focus:bg-white"
+                className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 sm:text-sm transition-colors text-slate-800 bg-slate-50 focus:bg-white"
                 placeholder="admin@mytiles.com"
               />
             </div>
@@ -89,7 +89,7 @@ const AdminLogin = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 sm:text-sm transition-colors text-slate-800 bg-slate-50 focus:bg-white"
+                className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 sm:text-sm transition-colors text-slate-800 bg-slate-50 focus:bg-white"
                 placeholder="••••••••"
               />
             </div>
@@ -99,7 +99,7 @@ const AdminLogin = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full flex items-center justify-center gap-2 py-3.5 px-4 border border-transparent rounded-xl shadow-sm text-sm font-bold text-white bg-slate-900 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-all ${loading ? 'opacity-70 cursor-not-allowed' : 'active:scale-[0.98]'}`}
+            className={`w-full flex items-center justify-center gap-2 py-3.5 px-4 border border-transparent rounded-none shadow-sm text-sm font-bold text-white bg-slate-900 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 transition-all ${loading ? 'opacity-70 cursor-not-allowed' : 'active:scale-[0.98]'}`}
           >
             {loading ? 'Authenticating...' : 'Sign In'}
             {!loading && <HiArrowRight className="text-lg" />}

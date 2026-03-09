@@ -19,7 +19,7 @@ const AdminSidebar = () => {
       {/* Brand Logo */}
       <div className="flex items-center justify-center h-20 border-b border-slate-800/60 mb-6">
         <Link to="/" className="text-2xl font-black tracking-wider text-white">
-          MY<span className="text-orange-500">TILES</span>
+          MY<span className="text-blue-600">TILES</span>
           <span className="block text-[10px] text-slate-500 tracking-[0.2em] font-medium text-center -mt-1 uppercase">Admin Panel</span>
         </Link>
       </div>

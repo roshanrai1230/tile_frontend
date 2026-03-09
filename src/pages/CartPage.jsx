@@ -18,7 +18,7 @@ function CartPage() {
         return (
             <div className="max-w-[1250px] mx-auto px-4 py-20 text-center">
                 <div className="mb-6 flex justify-center">
-                    <div className="bg-gray-50 p-8 rounded-full">
+                    <div className="bg-gray-100 p-8 rounded-none">
                         <HiOutlineShoppingBag className="text-6xl text-gray-300" />
                     </div>
                 </div>
@@ -26,7 +26,7 @@ function CartPage() {
                 <p className="text-gray-500 mb-8 italic">Looks like you haven't added any premium tiles to your cart yet.</p>
                 <Link
                     to="/"
-                    className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-black px-8 py-3 rounded-2xl transition-all shadow-lg shadow-orange-950/20 uppercase tracking-widest text-xs"
+                    className="inline-flex items-center gap-2 bg-blue-600 hover:bg-black text-white font-black px-8 py-3 rounded-none transition-all shadow-lg uppercase tracking-widest text-xs"
                 >
                     <HiOutlineArrowLeft /> Start Shopping
                 </Link>
@@ -39,7 +39,7 @@ function CartPage() {
             <div className="flex items-center justify-between mb-10">
                 <h1 className="text-3xl font-black text-gray-900 flex items-center gap-3 uppercase tracking-tighter italic">
                     Shopping Cart
-                    <span className="text-[10px] font-black bg-orange-100 text-orange-600 px-3 py-1 rounded-full uppercase tracking-widest">
+                    <span className="text-[10px] font-black bg-blue-100 text-blue-600 px-3 py-1 rounded-none uppercase tracking-widest">
                         {cartCount} Items
                     </span>
                 </h1>
@@ -55,8 +55,8 @@ function CartPage() {
                 {/* Cart Items List */}
                 <div className="lg:w-2/3 space-y-4">
                     {cart.map((item) => (
-                        <div key={`${item._id}-${item.selectedSize}-${item.selectedColor}`} className="bg-white border border-gray-100 rounded-3xl p-5 flex gap-6 shadow-sm hover:shadow-md transition-all group">
-                            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl overflow-hidden bg-gray-50 shrink-0 relative border border-gray-50">
+                        <div key={`${item._id}-${item.selectedSize}-${item.selectedColor}`} className="bg-white border border-gray-100 rounded-none p-5 flex gap-6 shadow-sm hover:shadow-md transition-all group">
+                            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-none overflow-hidden bg-gray-50 shrink-0 relative border border-gray-50">
                                 <img
                                     src={item.images && item.images[0] ? (item.images[0].startsWith('http') ? item.images[0] : `https://tile-backend-6xtp.onrender.com${item.images[0]}`) : ""}
                                     alt={item.name}
@@ -66,7 +66,7 @@ function CartPage() {
                             <div className="flex-1 flex flex-col justify-between py-1">
                                 <div>
                                     <div className="flex justify-between items-start">
-                                        <h3 className="font-black text-gray-900 sm:text-lg group-hover:text-orange-500 transition-colors uppercase tracking-tight line-clamp-1 italic">{item.name}</h3>
+                                        <h3 className="font-black text-gray-900 sm:text-lg group-hover:text-blue-600 transition-colors uppercase tracking-tight line-clamp-1 italic">{item.name}</h3>
                                         <button
                                             onClick={() => removeFromCart(item._id, item.selectedSize, item.selectedColor)}
                                             className="text-gray-200 hover:text-red-500 transition-colors p-1"
@@ -75,14 +75,14 @@ function CartPage() {
                                         </button>
                                     </div>
                                     <div className="flex flex-wrap items-center gap-3 mt-2">
-                                        <div className="flex items-center gap-1.5 bg-gray-50 px-3 py-1 rounded-full border border-gray-100 shadow-sm">
+                                        <div className="flex items-center gap-1.5 bg-gray-100 px-3 py-1 rounded-none border border-gray-200">
                                             <span className="text-[9px] text-gray-400 uppercase tracking-widest font-black">Size</span>
                                             <span className="text-[11px] font-black text-gray-700 uppercase">{item.selectedSize}</span>
                                         </div>
                                         {item.selectedColor && (
-                                            <div className="flex items-center gap-1.5 bg-gray-50 px-3 py-1 rounded-full border border-gray-100 shadow-sm">
+                                            <div className="flex items-center gap-1.5 bg-gray-100 px-3 py-1 rounded-none border border-gray-200">
                                                 <div
-                                                    className="w-2.5 h-2.5 rounded-full border border-black/10"
+                                                    className="w-2.5 h-2.5 rounded-none border border-black/10"
                                                     style={{ backgroundColor: item.selectedColor.toLowerCase() }}
                                                 />
                                                 <span className="text-[9px] text-gray-400 uppercase tracking-widest font-black">Color</span>
@@ -94,10 +94,10 @@ function CartPage() {
 
                                 <div className="flex justify-between items-end mt-4">
                                     {/* Quantity Adjustment */}
-                                    <div className="flex items-center bg-gray-100 rounded-2xl p-1 gap-3 border border-gray-200/50">
+                                    <div className="flex items-center bg-gray-100 rounded-none p-1 gap-3 border border-gray-200">
                                         <button
                                             onClick={() => updateQuantity(item._id, item.selectedSize, item.selectedColor, item.quantity - 1)}
-                                            className="w-8 h-8 flex items-center justify-center bg-white rounded-xl shadow-sm hover:text-orange-500 transition-all font-bold disabled:opacity-50"
+                                            className="w-8 h-8 flex items-center justify-center bg-white rounded-none shadow-sm hover:text-blue-600 transition-all font-bold disabled:opacity-50"
                                             disabled={item.quantity <= 1}
                                         >
                                             <HiMinus className="text-sm" />
@@ -105,7 +105,7 @@ function CartPage() {
                                         <span className="text-sm font-black w-6 text-center text-gray-900">{item.quantity}</span>
                                         <button
                                             onClick={() => updateQuantity(item._id, item.selectedSize, item.selectedColor, item.quantity + 1)}
-                                            className="w-8 h-8 flex items-center justify-center bg-white rounded-xl shadow-sm hover:text-orange-500 transition-all font-bold"
+                                            className="w-8 h-8 flex items-center justify-center bg-white rounded-none shadow-sm hover:text-blue-600 transition-all font-bold"
                                         >
                                             <HiPlus className="text-sm" />
                                         </button>
@@ -127,7 +127,7 @@ function CartPage() {
                     <div className="pt-6">
                         <button
                             onClick={() => navigate("/")}
-                            className="bg-gray-50 hover:bg-gray-100 text-gray-500 px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 transition-all border border-gray-100"
+                            className="bg-gray-100 hover:bg-gray-200 text-gray-600 px-8 py-4 rounded-none font-black text-[10px] uppercase tracking-[0.2em] flex items-center gap-2 transition-all border border-gray-200"
                         >
                             <HiOutlineArrowLeft /> Add More Premium Tiles
                         </button>
@@ -136,7 +136,7 @@ function CartPage() {
 
                 {/* Order Summary */}
                 <div className="lg:w-1/3">
-                    <div className="bg-gray-900 rounded-[40px] p-10 text-white sticky top-40 shadow-2xl border border-gray-800 flex flex-col gap-8">
+                    <div className="bg-gray-900 rounded-none p-10 text-white sticky top-40 shadow-2xl border border-gray-800 flex flex-col gap-8">
                         <div>
                             <h2 className="text-2xl font-black tracking-tighter uppercase italic mb-1">Cart Summary</h2>
                             <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Review your premium selection</p>
@@ -149,22 +149,22 @@ function CartPage() {
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em]">Standard Shipping</span>
-                                <span className="text-sm font-black text-green-500 uppercase tracking-widest italic bg-green-500/10 px-3 py-1 rounded-full">FREE</span>
+                                <span className="text-sm font-black text-green-500 uppercase tracking-widest italic bg-green-500/10 px-3 py-1 rounded-none">FREE</span>
                             </div>
 
                             <div className="h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent my-2" />
 
                             <div className="flex justify-between items-end">
                                 <div className="flex flex-col">
-                                    <span className="text-[9px] font-black uppercase tracking-[0.3em] text-orange-500/50">Grand Total</span>
+                                    <span className="text-[9px] font-black uppercase tracking-[0.3em] text-blue-400">Grand Total</span>
                                     <span className="text-sm font-bold text-gray-400 uppercase tracking-tighter italic leading-none mt-1">Inclusive of GST</span>
                                 </div>
-                                <span className="text-4xl font-black text-orange-500 tracking-tighter italic">₹{subtotal.toLocaleString()}</span>
+                                <span className="text-4xl font-black text-blue-600 tracking-tighter italic">₹{subtotal.toLocaleString()}</span>
                             </div>
                         </div>
 
                         <button
-                            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-black py-5 rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-orange-950/40 uppercase tracking-[0.2em] text-[11px]"
+                            className="w-full bg-blue-600 hover:bg-black text-white font-black py-5 rounded-none transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl uppercase tracking-[0.2em] text-[11px]"
                             onClick={() => navigate("/checkout")}
                         >
                             Confirm Order 🔒
@@ -172,11 +172,11 @@ function CartPage() {
 
 
                         <div className="flex items-center justify-center gap-3 pt-4 border-t border-gray-800/50 opacity-30">
-                            <div className="h-1 w-6 bg-orange-500 rounded-full" />
+                            <div className="h-1 w-6 bg-blue-600 rounded-none" />
                             <p className="text-[8px] font-black uppercase tracking-[0.3em]">
                                 Verified & Secured
                             </p>
-                            <div className="h-1 w-6 bg-orange-500 rounded-full" />
+                            <div className="h-1 w-6 bg-blue-600 rounded-none" />
                         </div>
                     </div>
                 </div>

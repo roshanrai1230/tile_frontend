@@ -46,14 +46,14 @@ const LeadFormModal = () => {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="relative w-full max-w-lg overflow-hidden bg-white shadow-2xl rounded-3xl"
+            className="relative w-full max-w-lg overflow-hidden bg-white shadow-2xl rounded-none"
           >
             {/* Background Accent */}
-            <div className="absolute top-0 left-0 w-full h-2 bg-orange-500" />
+            <div className="absolute top-0 left-0 w-full h-2 bg-blue-600" />
 
             <button
               onClick={closeModal}
-              className="absolute p-2 transition-colors right-4 top-4 text-slate-400 hover:text-orange-500"
+              className="absolute p-2 transition-colors right-4 top-4 text-slate-400 hover:text-blue-600"
             >
               <IoCloseOutline size={28} />
             </button>
@@ -80,7 +80,7 @@ const LeadFormModal = () => {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Enter your name"
-                        className="w-full px-4 py-3 transition-all border outline-none bg-slate-50 border-slate-200 rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                        className="w-full px-4 py-3 transition-all border outline-none bg-slate-50 border-slate-200 rounded-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
                       />
                     </div>
 
@@ -94,7 +94,7 @@ const LeadFormModal = () => {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="Your number"
-                          className="w-full px-4 py-3 transition-all border outline-none bg-slate-50 border-slate-200 rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                          className="w-full px-4 py-3 transition-all border outline-none bg-slate-50 border-slate-200 rounded-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
                         />
                       </div>
                       <div>
@@ -104,7 +104,7 @@ const LeadFormModal = () => {
                           name="tileType"
                           value={formData.tileType}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 transition-all border outline-none bg-slate-50 border-slate-200 rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                          className="w-full px-4 py-3 transition-all border outline-none bg-slate-50 border-slate-200 rounded-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
                         >
                           <option value="">Select Category</option>
                           <option value="floor">Floor Tiles</option>
@@ -124,7 +124,7 @@ const LeadFormModal = () => {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="What are you looking for?"
-                        className="w-full px-4 py-3 transition-all border outline-none resize-none bg-slate-50 border-slate-200 rounded-xl focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                        className="w-full px-4 py-3 transition-all border outline-none resize-none bg-slate-50 border-slate-200 rounded-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
                       ></textarea>
                     </div>
 
@@ -132,7 +132,7 @@ const LeadFormModal = () => {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       type="submit"
-                      className="w-full py-4 mt-2 font-bold text-white transition-all shadow-lg rounded-xl bg-[#1a1a1a] hover:bg-orange-500"
+                      className="w-full py-4 mt-2 font-bold text-white transition-all shadow-lg rounded-none bg-[#1a1a1a] hover:bg-blue-600"
                     >
                       Request Free Consultation
                     </motion.button>

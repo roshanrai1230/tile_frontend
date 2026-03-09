@@ -9,8 +9,8 @@ function LivingRoom() {
   useEffect(() => {
     const fetchLivingRoomTiles = async () => {
       try {
-        const res = await axios.get("https://tile-backend-6xtp.onrender.com/api/products/all");
-        const filtered = res.data.filter(tile => tile.category === "LIVING ROOM");
+        const data = res.data?.products || res.data || [];
+        const filtered = Array.isArray(data) ? data.filter(tile => tile.category === "LIVING ROOM") : [];
         setProducts(filtered);
       } catch (err) {
         console.error("Data laane mein error:", err);
@@ -26,7 +26,7 @@ function LivingRoom() {
         {products.map((item) => (
           <div
             key={item._id}
-            className="bg-white border border-gray-100 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            className="bg-white border border-gray-100 rounded-none overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             onClick={() => navigate(`/product/${item._id}`)}
           >
             <div>
@@ -39,9 +39,9 @@ function LivingRoom() {
             <div className="p-4">
               <h3 className="text-base font-semibold text-gray-900 mb-1 truncate">{item.name}</h3>
               <p className="text-sm text-gray-500 mb-2">{item.size}</p>
-              <p className="text-base font-bold text-orange-500">
+              <p className="text-base font-bold text-blue-600">
                 ₹{item.priceSqFt}/Sq.Ft
-                <span className="block text-xs text-gray-400 font-normal mt-0.5">Or ₹{item.priceBox}/Box</span>
+                <span className="block text-xs text-gray-400 font-normal mt-0.5 italic">Or ₹{item.priceBox}/Box</span>
               </p>
             </div>
           </div>

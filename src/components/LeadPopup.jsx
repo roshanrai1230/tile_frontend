@@ -48,7 +48,7 @@ export default function LeadPopup() {
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4">
-      <div className="bg-white w-full max-w-lg rounded-xl p-6 md:p-8 relative shadow-2xl animate-in fade-in zoom-in duration-300 max-h-[90vh] overflow-y-auto scrollbar-none">
+      <div className="bg-white w-full max-w-lg rounded-none p-6 md:p-8 relative shadow-[10px_10px_0px_0px_rgba(31,41,55,1)] border-2 border-gray-900 animate-in fade-in zoom-in duration-300 max-h-[90vh] overflow-y-auto scrollbar-none">
         
         {/* Close Button */}
         <button 
@@ -69,7 +69,7 @@ export default function LeadPopup() {
               Hamari team aapse bahut jald contact karegi.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              Thank you for choosing Titan Tiles!
+              Thank you for choosing MyTiles!
             </p>
           </div>
         ) : (
@@ -78,7 +78,7 @@ export default function LeadPopup() {
             {/* Header */}
             <div className="text-center mb-6">
               <h2 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-wide">
-                WELCOME TO <span className="text-orange-500">TITAN TILES</span>
+                WELCOME TO <span className="text-blue-600">MY TILES</span>
               </h2>
               <p className="text-gray-500 text-sm">
                 Please provide your details below to get best recommendations and personalized offers!
@@ -95,7 +95,7 @@ export default function LeadPopup() {
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all"
+                    className="w-full px-4 py-2.5 bg-gray-50 border-2 border-gray-900 rounded-none focus:outline-none focus:ring-0 focus:bg-white transition-all text-sm font-bold"
                     placeholder="Enter your name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -109,7 +109,7 @@ export default function LeadPopup() {
                   <input
                     type="tel"
                     required
-                    className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all"
+                    className="w-full px-4 py-2.5 bg-gray-50 border-2 border-gray-900 rounded-none focus:outline-none focus:ring-0 focus:bg-white transition-all text-sm font-bold"
                     placeholder="Enter phone number"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -123,7 +123,7 @@ export default function LeadPopup() {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all"
+                  className="w-full px-4 py-2.5 bg-gray-50 border-2 border-gray-900 rounded-none focus:outline-none focus:ring-0 focus:bg-white transition-all text-sm font-bold"
                   placeholder="Enter your email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -137,7 +137,7 @@ export default function LeadPopup() {
                 <textarea
                   required
                   rows="2"
-                  className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all resize-none"
+                  className="w-full px-4 py-2.5 bg-gray-50 border-2 border-gray-900 rounded-none focus:outline-none focus:ring-0 focus:bg-white transition-all resize-none text-sm font-bold"
                   placeholder="Enter your detailed address"
                   value={formData.address}
                   onChange={(e) => setFormData({ ...formData, address: e.target.value })}
@@ -151,7 +151,7 @@ export default function LeadPopup() {
                 <textarea
                   required
                   rows="3"
-                  className="w-full px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:bg-white transition-all resize-none"
+                  className="w-full px-4 py-2.5 bg-gray-50 border-2 border-gray-900 rounded-none focus:outline-none focus:ring-0 focus:bg-white transition-all resize-none text-sm font-bold"
                   placeholder="E.g., Bathroom tiles needed for 300 sq.ft, matte finish..."
                   value={formData.purpose}
                   onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
@@ -160,7 +160,7 @@ export default function LeadPopup() {
 
               <button
                 type="submit"
-                className="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-3.5 rounded-lg transition-colors uppercase tracking-widest text-sm mt-4"
+                className="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold py-3.5 rounded-none transition-colors uppercase tracking-widest text-sm mt-4"
               >
                 Submit Details
               </button>

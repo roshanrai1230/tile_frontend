@@ -28,17 +28,17 @@ const Testimonials = () => {
             <div className="max-w-[1250px] mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-extrabold text-[#1a1a1a] mb-4">
-                        Hear from <span className="text-orange-500">Our Clients</span>
+                        Hear from <span className="text-blue-600">Our Clients</span>
                     </h2>
                     <p className="text-gray-500 font-medium">Real stories from our premium tile installations.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {testimonials.map((t, index) => (
-                        <div key={index} className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                        <div key={index} className="bg-white p-8 rounded-none shadow-sm border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
                             <div className="flex gap-1 mb-4">
                                 {[...Array(t.rating)].map((_, i) => (
-                                    <HiStar key={i} className="text-orange-500 text-xl" />
+                                    <HiStar key={i} className="text-blue-600 text-xl" />
                                 ))}
                             </div>
                             <p className="text-gray-600 italic mb-6 leading-relaxed">"{t.comment}"</p>

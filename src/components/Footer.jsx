@@ -18,12 +18,12 @@ const Footer = () => {
     <footer className="bg-[#111111] text-white mt-16 font-sans">
 
       {/* Top Banner */}
-      <div className="bg-orange-500 py-4 px-6">
+      <div className="bg-blue-600 py-4 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-white font-bold text-sm tracking-wide text-center">
             🏠 India's No.1 Premium Tile Brand — Free Delivery on Orders Above ₹10,000
           </p>
-          <a href="/contact" className="shrink-0 bg-white text-orange-600 font-black text-xs px-5 py-2 rounded-full hover:bg-orange-50 transition-colors">
+          <a href="/contact" className="shrink-0 bg-white text-blue-600 font-black text-xs px-5 py-2 rounded-none hover:bg-blue-50 transition-colors">
             Get a Free Quote →
           </a>
         </div>
@@ -35,7 +35,7 @@ const Footer = () => {
         {/* Brand Column */}
         <div className="lg:col-span-1">
           <h2 className="text-3xl font-black tracking-tight mb-4">
-            My<span className="text-orange-500">Tiles</span>
+            My<span className="text-blue-600">Tiles</span>
           </h2>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
             Premium quality wall and floor tiles with world-class designs. Transforming your dream spaces since 2010.
@@ -44,15 +44,15 @@ const Footer = () => {
           {/* Contact Info */}
           <div className="space-y-2.5 mb-6">
             <p className="flex items-center gap-2.5 text-gray-400 text-sm">
-              <HiOutlinePhone className="text-orange-500 shrink-0 text-base" />
+              <HiOutlinePhone className="text-blue-600 shrink-0 text-base" />
               1800-123-4567 (Toll Free)
             </p>
             <p className="flex items-center gap-2.5 text-gray-400 text-sm">
-              <HiOutlineMail className="text-orange-500 shrink-0 text-base" />
+              <HiOutlineMail className="text-blue-600 shrink-0 text-base" />
               info@mytiles.com
             </p>
             <p className="flex items-center gap-2.5 text-gray-400 text-sm">
-              <HiOutlineLocationMarker className="text-orange-500 shrink-0 text-base" />
+              <HiOutlineLocationMarker className="text-blue-600 shrink-0 text-base" />
               New Delhi, India — 110001
             </p>
           </div>
@@ -69,7 +69,7 @@ const Footer = () => {
               <a
                 key={i}
                 href={href}
-                className="w-9 h-9 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gray-400 hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all duration-300"
+                className="w-9 h-9 bg-white/5 border border-white/10 rounded-none flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:border-blue-600 hover:text-white transition-all duration-300"
               >
                 <Icon className="text-sm" />
               </a>
@@ -94,10 +94,10 @@ const Footer = () => {
               <li key={href}>
                 <a
                   href={href}
-                  className="text-gray-400 text-sm hover:text-orange-400 hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"
+                  className="text-gray-400 text-sm hover:text-blue-400 hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"
                 >
                   <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200">
-                    <HiArrowRight className="text-orange-400 text-xs" />
+                    <HiArrowRight className="text-blue-400 text-xs" />
                   </span>
                   {label}
                 </a>
@@ -124,10 +124,10 @@ const Footer = () => {
               <li key={label}>
                 <a
                   href={href}
-                  className="text-gray-400 text-sm hover:text-orange-400 hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"
+                  className="text-gray-400 text-sm hover:text-blue-400 hover:translate-x-1 inline-flex items-center gap-1.5 transition-all duration-200 group"
                 >
                   <span className="w-0 group-hover:w-3 overflow-hidden transition-all duration-200">
-                    <HiArrowRight className="text-orange-400 text-xs" />
+                    <HiArrowRight className="text-blue-400 text-xs" />
                   </span>
                   {label}
                 </a>
@@ -146,7 +146,7 @@ const Footer = () => {
           </p>
 
           {subscribed ? (
-            <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 text-center">
+            <div className="bg-green-500/10 border border-green-500/30 rounded-none p-4 text-center">
               <p className="text-green-400 font-bold text-sm">✓ You're subscribed!</p>
               <p className="text-green-400/70 text-xs mt-1">Thanks for joining MyTiles.</p>
             </div>
@@ -160,12 +160,12 @@ const Footer = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
                   required
-                  className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-sm text-white placeholder:text-gray-600 outline-none focus:border-orange-500/60 focus:bg-white/8 transition-all"
+                  className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-none text-sm text-white placeholder:text-gray-600 outline-none focus:border-blue-500/60 focus:bg-white/8 transition-all"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl text-sm transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-none text-sm transition-colors flex items-center justify-center gap-2"
               >
                 Subscribe Now
                 <HiArrowRight />
@@ -176,7 +176,7 @@ const Footer = () => {
           {/* Trust Badges */}
           <div className="mt-6 flex gap-3 flex-wrap">
             {["ISO Certified", "100% Original", "Pan India Delivery"].map((badge) => (
-              <span key={badge} className="text-[10px] font-bold text-gray-500 bg-white/5 border border-white/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+              <span key={badge} className="text-[10px] font-bold text-gray-500 bg-white/5 border border-white/10 px-2.5 py-1 rounded-none uppercase tracking-wider">
                 {badge}
               </span>
             ))}

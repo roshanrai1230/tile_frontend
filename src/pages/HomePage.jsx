@@ -203,20 +203,20 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════ */}
       {/* HERO BANNER — AUTO-ROTATING CAROUSEL      */}
       {/* ══════════════════════════════════════════ */}
-      <section className="relative mx-4 md:mx-8 mt-4 rounded-2xl overflow-hidden flex flex-col md:flex-row min-h-[280px] md:min-h-[340px] bg-[#f5f0ea]">
+      <section className="relative mx-4 md:mx-8 mt-4 rounded-none overflow-hidden flex flex-col md:flex-row min-h-[280px] md:min-h-[340px] bg-[#f0f0f0] shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
 
         {/* Left — Text (fade transition) */}
         <div
           className="flex-1 flex flex-col justify-center px-8 md:px-14 py-10 z-10 transition-opacity duration-400"
           style={{ opacity: heroVisible ? 1 : 0, transition: "opacity 0.4s ease" }}
         >
-          <p className="text-xs font-bold uppercase tracking-widest text-orange-400 mb-2">
+          <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">
             {slide.tag}
           </p>
           <h1 className="text-4xl md:text-5xl font-black leading-tight text-gray-900 mb-4">
             {slide.title}
             <br />
-            <span className="text-orange-500">{slide.highlight}</span>
+            <span className="text-blue-600">{slide.highlight}</span>
           </h1>
           <p className="text-gray-500 text-sm max-w-xs leading-relaxed mb-6">
             {slide.desc}
@@ -224,13 +224,13 @@ export default function HomePage() {
           <div className="flex gap-3">
             <button
               onClick={() => navigate(slide.link)}
-              className="px-6 py-2.5 bg-gray-900 text-white text-sm font-bold rounded-sm hover:bg-gray-700 transition-colors tracking-wide"
+              className="px-6 py-2.5 bg-gray-900 text-white text-sm font-bold rounded-none hover:bg-gray-700 transition-colors tracking-wide"
             >
               Shop Now
             </button>
             <button
               onClick={() => navigate("/")}
-              className="px-6 py-2.5 border border-gray-400 text-gray-700 text-sm font-bold rounded-sm hover:bg-gray-100 transition-colors tracking-wide"
+              className="px-6 py-2.5 border border-gray-400 text-gray-700 text-sm font-bold rounded-none hover:bg-gray-100 transition-colors tracking-wide"
             >
               View All
             </button>
@@ -245,7 +245,7 @@ export default function HomePage() {
                 className={`rounded-full transition-all duration-300 ${
                   i === heroIndex
                     ? "w-6 h-2 bg-gray-900"
-                    : "w-2 h-2 bg-gray-300 hover:bg-gray-500"
+                    : "w-2 h-2 bg-gray-300 hover:bg-gray-500 rounded-none"
                 }`}
               />
             ))}
@@ -295,7 +295,7 @@ export default function HomePage() {
               className={`shrink-0 flex flex-col items-center gap-2 focus:outline-none group transition-all`}
             >
               <div
-                className={`w-16 h-16 rounded-lg transition-all duration-200 ${
+                className={`w-16 h-16 rounded-none transition-all duration-200 ${
                   activeChip === chip.label
                     ? "ring-2 ring-gray-900 ring-offset-2 scale-105"
                     : "hover:scale-105"
@@ -317,7 +317,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════ */}
       {/* EXPLORE TOP CATEGORIES (SLIDER)           */}
       {/* ══════════════════════════════════════════ */}
-      <section className="mt-14 px-4 md:px-8">
+      <section className="mt-14 px-4 md:px-8 bg-gray-100 py-12 border-y border-gray-200">
         <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-black tracking-widest uppercase text-gray-900">Explore Top Categories</h2>
           <p className="text-gray-400 text-sm mt-2">The materials and finishes you're looking for.</p>
@@ -327,7 +327,7 @@ export default function HomePage() {
           {/* Left Arrow */}
           <button
             onClick={() => document.getElementById('cat-slider').scrollBy({ left: -320, behavior: 'smooth' })}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white border border-gray-200 shadow-lg rounded-full p-2.5 hover:bg-gray-50 transition-all opacity-0 group-hover:opacity-100"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white border border-gray-200 shadow-lg rounded-none p-2.5 hover:bg-gray-50 transition-all opacity-0 group-hover:opacity-100"
           >
             <HiChevronLeft className="text-xl text-gray-700" />
           </button>
@@ -371,7 +371,7 @@ export default function HomePage() {
           {/* Right Arrow */}
           <button
             onClick={() => document.getElementById('cat-slider').scrollBy({ left: 320, behavior: 'smooth' })}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white border border-gray-200 shadow-lg rounded-full p-2.5 hover:bg-gray-50 transition-all opacity-0 group-hover:opacity-100"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white border border-gray-200 shadow-lg rounded-none p-2.5 hover:bg-gray-50 transition-all opacity-0 group-hover:opacity-100"
           >
             <HiChevronRight className="text-xl text-gray-700" />
           </button>
@@ -388,7 +388,7 @@ export default function HomePage() {
             <button
               key={cat.label}
               onClick={() => setActiveCategory(cat.value)}
-              className={`shrink-0 px-5 py-2 rounded-full text-sm font-bold transition-all border ${
+              className={`shrink-0 px-5 py-2 rounded-none text-sm font-bold transition-all border ${
                 activeCategory === cat.value
                   ? 'bg-gray-900 text-white border-gray-900 shadow-md'
                   : 'bg-white text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900'
@@ -412,22 +412,22 @@ export default function HomePage() {
             <div key={key} className="relative shrink-0">
               <button
                 onClick={() => setOpenFilter(openFilter === key ? null : key)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 border rounded-full text-xs font-semibold transition-colors ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 border rounded-none text-xs font-semibold transition-colors ${
                   activeFilters[key]
-                    ? "bg-gray-900 text-white border-gray-900"
-                    : "border-gray-300 text-gray-600 hover:border-gray-500 bg-white"
+                      ? "bg-gray-900 text-white border-gray-900"
+                    : "border-gray-300 text-gray-600 hover:border-gray-500 bg-gray-50"
                 }`}
               >
                 {key}
                 {activeFilters[key] ? (
-                  <span className="ml-1 text-[10px] bg-white/20 rounded-full px-1">{activeFilters[key]}</span>
+                  <span className="ml-1 text-[10px] bg-white/20 rounded-none px-1">{activeFilters[key]}</span>
                 ) : (
                   <HiChevronDown className="text-sm" />
                 )}
               </button>
               {/* Dropdown */}
               {openFilter === key && (
-                <div className="absolute top-[calc(100%+4px)] left-0 bg-white border border-gray-200 rounded-xl shadow-xl z-[200] min-w-[160px] py-2">
+                <div className="absolute top-[calc(100%+4px)] left-0 bg-white border border-gray-200 rounded-none shadow-xl z-[200] min-w-[160px] py-2">
                   {filterOptions[key].map((opt) => (
                     <button
                       key={opt}
@@ -436,8 +436,8 @@ export default function HomePage() {
                         setActiveFilters({ ...activeFilters, [key]: opt });
                         setOpenFilter(null);
                       }}
-                      className={`w-full text-left px-4 py-2 text-sm hover:bg-orange-50 hover:text-orange-600 transition-colors ${
-                        activeFilters[key] === opt ? "font-bold text-orange-600 bg-orange-50" : "text-gray-700"
+                      className={`w-full text-left px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 transition-colors ${
+                        activeFilters[key] === opt ? "font-bold text-blue-600 bg-blue-50" : "text-gray-700"
                       }`}
                     >
                       {opt}
@@ -449,11 +449,11 @@ export default function HomePage() {
           ))}
 
           {/* All Filters */}
-          <button className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 border border-gray-300 rounded-full text-xs font-semibold text-gray-600 hover:border-gray-500 bg-white transition-colors">
+          <button className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 border border-gray-300 rounded-none text-xs font-semibold text-gray-600 hover:border-gray-500 bg-white transition-colors">
             <HiOutlineAdjustments className="text-sm" />
             All Filters
             {activeFilterCount > 0 && (
-              <span className="ml-0.5 bg-orange-500 text-white rounded-full w-4 h-4 text-[10px] flex items-center justify-center font-bold">
+              <span className="ml-0.5 bg-blue-600 text-white rounded-none w-4 h-4 text-[10px] flex items-center justify-center font-bold">
                 {activeFilterCount}
               </span>
             )}
@@ -463,13 +463,13 @@ export default function HomePage() {
           <div className="ml-auto shrink-0 relative">
             <button
               onClick={() => setOpenFilter(openFilter === "Sort By" ? null : "Sort By")}
-              className="flex items-center gap-1.5 px-3 py-1.5 border border-gray-300 rounded-full text-xs font-semibold text-gray-600 hover:border-gray-500 bg-white transition-colors"
+              className="flex items-center gap-1.5 px-3 py-1.5 border border-gray-300 rounded-none text-xs font-semibold text-gray-600 hover:border-gray-500 bg-white transition-colors"
             >
               Sort: {sortBy}
               <HiChevronDown className="text-sm" />
             </button>
             {openFilter === "Sort By" && (
-              <div className="absolute top-[calc(100%+4px)] right-0 bg-white border border-gray-200 rounded-xl shadow-xl z-[200] min-w-[180px] py-2">
+              <div className="absolute top-[calc(100%+4px)] right-0 bg-white border border-gray-200 rounded-none shadow-xl z-[200] min-w-[180px] py-2">
                 {filterOptions["Sort By"].map((opt) => (
                   <button
                     key={opt}
@@ -478,8 +478,8 @@ export default function HomePage() {
                       setSortBy(opt); 
                       setOpenFilter(null); 
                     }}
-                    className={`w-full text-left px-4 py-2 text-sm hover:bg-orange-50 hover:text-orange-600 transition-colors ${
-                      sortBy === opt ? "font-bold text-orange-600 bg-orange-50" : "text-gray-700"
+                    className={`w-full text-left px-4 py-2 text-sm hover:bg-blue-50 hover:text-blue-600 transition-colors ${
+                      sortBy === opt ? "font-bold text-blue-600 bg-blue-50" : "text-gray-700"
                     }`}
                   >
                     {opt}
@@ -496,10 +496,10 @@ export default function HomePage() {
             {Object.entries(activeFilters).map(([key, val]) => (
               <span
                 key={key}
-                className="flex items-center gap-1.5 bg-orange-50 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full border border-orange-200"
+                className="flex items-center gap-1.5 bg-gray-200 text-gray-800 text-xs font-semibold px-3 py-1 rounded-none border border-gray-300"
               >
                 {key}: {val}
-                <button onClick={() => clearFilter(key)} className="hover:text-orange-900">
+                <button onClick={() => clearFilter(key)} className="hover:text-blue-900">
                   <HiX className="text-xs" />
                 </button>
               </span>
@@ -522,7 +522,7 @@ export default function HomePage() {
         {!loading && (
           <p className="text-sm text-gray-500 mb-4 font-medium">
             <span className="font-bold text-gray-800">{filteredProducts.length}</span> results
-            {activeCategory && <span className="text-orange-500 font-bold"> · {activeCategory}</span>}
+            {activeCategory && <span className="text-blue-600 font-bold"> · {activeCategory}</span>}
           </p>
         )}
 

@@ -110,8 +110,8 @@ function TopNavbar() {
 
           {/* Logo */}
           <Link to="/" className="shrink-0 no-underline flex items-center gap-1">
-            <span className="text-2xl font-black tracking-tighter text-gray-900">
-              my<span className="text-orange-500">tiles</span>
+            <span className="text-2xl font-black tracking-tighter text-blue-800">
+              my<span className="text-blue-600">tiles</span>
             </span>
           </Link>
 
@@ -120,7 +120,7 @@ function TopNavbar() {
             <input
               type="text"
               placeholder="Search tiles, styles, rooms..."
-              className="w-full pl-4 pr-10 py-2.5 border border-gray-300 rounded-sm text-sm outline-none bg-gray-50 focus:bg-white focus:border-gray-500 transition-all"
+              className="w-full pl-4 pr-10 py-2.5 border border-gray-300 rounded-none text-sm outline-none bg-gray-50 focus:bg-white focus:border-gray-500 transition-all"
             />
             <HiOutlineSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-lg" />
           </div>
@@ -134,7 +134,7 @@ function TopNavbar() {
                   onMouseEnter={() => setProfileOpen(true)}
                   onMouseLeave={() => setProfileOpen(false)}
                 >
-                  <div className="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-bold text-sm">
+                  <div className="w-8 h-8 rounded-none bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm">
                     {user.name ? user.name.charAt(0).toUpperCase() : 'U'}
                   </div>
                   <span className="text-xs font-bold">{user.name?.split(' ')[0] || 'User'}</span>
@@ -175,7 +175,7 @@ function TopNavbar() {
               <div className="relative">
                 <HiOutlineShoppingCart className="text-xl" />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-orange-500 text-white text-[10px] font-bold px-1 py-0.5 rounded-full leading-none min-w-[17px] text-center">
+                  <span className="absolute -top-1.5 -right-1.5 bg-blue-600 text-white text-[10px] font-bold px-1 py-0.5 rounded-none leading-none min-w-[17px] text-center">
                     {cartCount}
                   </span>
                 )}
@@ -195,7 +195,7 @@ function TopNavbar() {
             <Link to="/cart" className="relative text-gray-700 text-2xl no-underline">
               <HiOutlineShoppingCart />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[10px] font-bold px-1 rounded-full leading-tight min-w-[16px] text-center">
+                <span className="absolute -top-1 -right-1 bg-blue-600 text-white text-[10px] font-bold px-1 rounded-none leading-tight min-w-[16px] text-center">
                   {cartCount}
                 </span>
               )}
@@ -216,7 +216,7 @@ function TopNavbar() {
               <input
                 type="text"
                 placeholder="Search tiles..."
-                className="w-full pl-4 pr-10 py-2.5 border border-gray-300 rounded-sm text-sm outline-none bg-gray-50 focus:bg-white focus:border-gray-500"
+                className="w-full pl-4 pr-10 py-2.5 border border-gray-300 rounded-none text-sm outline-none bg-gray-50 focus:bg-white focus:border-gray-500"
                 autoFocus
               />
               <HiOutlineSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -226,14 +226,14 @@ function TopNavbar() {
       </div>
 
       {/* === CATEGORY NAV BAR === */}
-      <div className="bg-white border-b border-gray-200 hidden md:block">
+      <div className="bg-white border-b-4 border-gray-900 hidden md:block shadow-[0_4px_10px_rgba(0,0,0,0.1)]">
         <div className="max-w-[1400px] mx-auto px-6">
           <ul className="flex gap-0 list-none m-0 p-0 overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden">
             {navLinks.map((item, i) => (
               <li key={i} className="shrink-0">
                 <Link
                   to={item.link}
-                  className="inline-block px-4 py-3 text-[13px] font-semibold text-gray-700 uppercase tracking-wide no-underline hover:text-orange-500 hover:border-b-2 hover:border-orange-500 transition-all duration-150 whitespace-nowrap border-b-2 border-transparent"
+                  className="inline-block px-4 py-3 text-[13px] font-semibold text-gray-700 uppercase tracking-wide no-underline hover:text-blue-600 hover:border-b-2 hover:border-blue-600 transition-all duration-150 whitespace-nowrap border-b-2 border-transparent"
                 >
                   {item.name}
                 </Link>
@@ -272,7 +272,7 @@ function TopNavbar() {
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
           <Link to="/" className="text-xl font-black tracking-tighter text-gray-900 no-underline" onClick={() => setIsMenuOpen(false)}>
-            my<span className="text-orange-500">tiles</span>
+            my<span className="text-blue-600">tiles</span>
           </Link>
           <button onClick={() => setIsMenuOpen(false)} className="text-2xl text-gray-600">
             <HiX />
@@ -283,7 +283,7 @@ function TopNavbar() {
             <li key={i} className="border-b border-gray-100">
               <Link
                 to={item.link}
-                className="block px-6 py-4 text-gray-800 font-semibold text-sm no-underline hover:text-orange-500 hover:bg-orange-50 transition-colors"
+                className="block px-6 py-4 text-gray-800 font-semibold text-sm no-underline hover:text-blue-600 hover:bg-blue-50 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -291,7 +291,7 @@ function TopNavbar() {
             </li>
           ))}
           <li className="border-b border-gray-100">
-            <a href="#" className="block px-6 py-4 text-gray-800 font-semibold text-sm no-underline hover:text-orange-500 hover:bg-orange-50 transition-colors">
+            <a href="#" className="block px-6 py-4 text-gray-800 font-semibold text-sm no-underline hover:text-blue-600 hover:bg-blue-50 transition-colors">
               Login / Register
             </a>
           </li>

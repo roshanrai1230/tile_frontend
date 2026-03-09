@@ -29,7 +29,7 @@ const ProtectedRoute = ({ children }) => {
   if (isAuthenticated === null) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-slate-50 text-slate-400">
-        <HiOutlineRefresh className="animate-spin text-4xl text-orange-500" />
+        <HiOutlineRefresh className="animate-spin text-4xl text-blue-600" />
       </div>
     );
   }

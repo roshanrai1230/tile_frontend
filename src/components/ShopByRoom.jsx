@@ -39,7 +39,7 @@ const ShopByRoom = () => {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div className="max-w-xl">
                         <h2 className="text-4xl font-extrabold text-[#1a1a1a] mb-4">
-                            Shop by <span className="text-orange-500">Room</span>
+                            Shop by <span className="text-blue-600">Room</span>
                         </h2>
                         <p className="text-gray-500 font-medium">
                             Discover curated tile collections specifically designed for every corner of your home, combining aesthetics with functionality.
@@ -53,7 +53,7 @@ const ShopByRoom = () => {
                             key={index}
                             whileHover={{ y: -10 }}
                             onClick={() => navigate(room.link)}
-                            className={`relative group overflow-hidden rounded-3xl cursor-pointer h-[400px] ${room.cols}`}
+                            className={`relative group overflow-hidden rounded-none cursor-pointer h-[400px] ${room.cols}`}
                         >
                             <img
                                 src={room.image}
@@ -67,7 +67,7 @@ const ShopByRoom = () => {
                                 <p className="text-gray-300 text-sm mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     {room.description}
                                 </p>
-                                <button className="px-6 py-2 bg-white text-[#1a1a1a] font-bold rounded-full text-xs hover:bg-orange-500 hover:text-white transition-colors uppercase tracking-widest">
+                                <button className="px-6 py-2 bg-white text-[#1a1a1a] font-bold rounded-none text-xs hover:bg-blue-600 hover:text-white transition-colors uppercase tracking-widest">
                                     Explore
                                 </button>
                             </div>

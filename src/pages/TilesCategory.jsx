@@ -25,9 +25,9 @@ function TilesCategory() {
     <section className="py-20 px-4 max-w-[1250px] mx-auto uppercase tracking-tight">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-extrabold text-[#1a1a1a] mb-4">
-          Browse by <span className="text-orange-500">Category</span>
+          Browse by <span className="text-blue-600">Category</span>
         </h2>
-        <div className="w-16 h-1 bg-orange-500 mx-auto rounded-full mb-6" />
+        <div className="w-16 h-1 bg-blue-600 mx-auto rounded-none mb-6" />
         <p className="text-gray-500 max-w-2xl mx-auto font-medium leading-relaxed">
           Exquisite tiles categorized for your convenience. From elegant bathroom marbles to rugged outdoor stones, find the perfect match for your vision.
         </p>
@@ -48,7 +48,7 @@ function TilesCategory() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
             </div>
-            <h3 className="text-xs font-black text-[#1a1a1a] tracking-widest group-hover:text-orange-500 transition-colors">
+            <h3 className="text-xs font-black text-[#1a1a1a] tracking-widest group-hover:text-blue-600 transition-colors">
               {cat.name}
             </h3>
           </motion.div>

@@ -24,7 +24,7 @@ function ProductCard({ product }) {
 
     return (
         <div
-            className="group bg-white border border-gray-100 rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col h-full"
+            className="group bg-gray-100 border border-gray-200 rounded-none overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl flex flex-col h-full"
             onClick={() => navigate(`/product/${product._id}`)}
         >
             {/* Image Container */}
@@ -41,7 +41,7 @@ function ProductCard({ product }) {
             {/* Content Container */}
             <div className="p-4 flex flex-col flex-1">
                 <div className="flex-1">
-                    <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-orange-500 transition-colors line-clamp-1">
+                    <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors line-clamp-1">
                         {product.name}
                     </h3>
                     <p className="text-[11px] text-gray-400 mb-2 uppercase tracking-wider font-medium">
@@ -66,14 +66,14 @@ function ProductCard({ product }) {
                 <div className="grid grid-cols-2 gap-2 mt-auto">
                     <button
                         onClick={handleAddToCart}
-                        className="flex items-center justify-center gap-1.5 py-2 px-1 border-2 border-orange-500 text-orange-600 rounded-lg text-[11px] font-bold hover:bg-orange-50 transition-colors uppercase tracking-tight"
+                        className="flex items-center justify-center gap-1.5 py-2 px-1 border-2 border-blue-600 text-blue-600 rounded-none text-[11px] font-bold hover:bg-blue-50 transition-colors uppercase tracking-tight"
                     >
                         <HiOutlineShoppingCart className="text-sm" />
                         Add
                     </button>
                     <button
                         onClick={handleBuyNow}
-                        className="py-2 px-1 bg-orange-500 text-white rounded-lg text-[11px] font-black hover:bg-orange-600 transition-colors shadow-lg shadow-orange-200 uppercase tracking-tight"
+                        className="py-2 px-1 bg-blue-600 text-white rounded-none text-[11px] font-black hover:bg-black transition-all shadow-lg shadow-blue-200 uppercase tracking-tight"
                     >
                         Buy Now
                     </button>

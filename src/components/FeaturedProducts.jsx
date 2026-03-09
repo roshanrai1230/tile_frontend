@@ -43,11 +43,11 @@ const FeaturedProducts = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center mb-12">
                     <div>
                         <h2 className="text-4xl font-extrabold text-[#1a1a1a] mb-2">
-                            Featured <span className="text-orange-500">Collections</span>
+                            Featured <span className="text-blue-600">Collections</span>
                         </h2>
                         <p className="text-gray-500 font-medium">Handpicked premium designs for sophisticated interiors.</p>
                     </div>
-                    <button className="mt-6 md:mt-0 px-8 py-3 bg-[#1a1a1a] text-white font-bold rounded-lg hover:bg-orange-500 transition-colors shadow-lg">
+                    <button className="mt-6 md:mt-0 px-8 py-3 bg-blue-600 text-white font-bold rounded-none hover:bg-black transition-colors shadow-lg">
                         View All Products
                     </button>
                 </div>

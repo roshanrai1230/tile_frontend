@@ -69,10 +69,10 @@ export default function AboutPage() {
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
         <div className="relative max-w-4xl mx-auto px-6 py-28 text-center">
-          <p className="text-orange-400 text-xs font-black uppercase tracking-[0.3em] mb-4">Our Story</p>
+          <p className="text-blue-500 text-xs font-black uppercase tracking-[0.3em] mb-4">Our Story</p>
           <h1 className="text-4xl md:text-6xl font-black leading-tight mb-6">
-            Built on <span className="text-orange-500">Passion</span>,<br />
-            Crafted for <span className="text-orange-500">Perfection</span>
+            Built on <span className="text-blue-600">Passion</span>,<br />
+            Crafted for <span className="text-blue-600">Perfection</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
             Since 2010, MyTiles has been India's most trusted name in premium tile solutions —
@@ -82,7 +82,7 @@ export default function AboutPage() {
       </section>
 
       {/* ─── STATS ────────────────────────────────── */}
-      <section className="bg-orange-500 py-10">
+      <section className="bg-blue-600 py-10">
         <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           {stats.map((s) => (
             <div key={s.label}>
@@ -96,7 +96,7 @@ export default function AboutPage() {
       {/* ─── OUR STORY ────────────────────────────── */}
       <section className="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-14 items-center">
         <div>
-          <p className="text-orange-500 text-xs font-black uppercase tracking-widest mb-3">Who We Are</p>
+          <p className="text-blue-600 text-xs font-black uppercase tracking-widest mb-3">Who We Are</p>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">
             India's #1 Destination<br />for Premium Tiles
           </h2>
@@ -111,7 +111,7 @@ export default function AboutPage() {
           </p>
           <button
             onClick={() => navigate("/")}
-            className="bg-gray-900 text-white px-7 py-3 rounded-full text-sm font-bold hover:bg-orange-500 transition-colors"
+            className="bg-gray-900 text-white px-7 py-3 rounded-none text-sm font-bold hover:bg-blue-600 transition-colors"
           >
             Browse Our Collection →
           </button>
@@ -120,12 +120,12 @@ export default function AboutPage() {
           <img
             src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=400&q=80"
             alt="Showroom"
-            className="rounded-2xl w-full aspect-[3/4] object-cover"
+            className="rounded-none w-full aspect-[3/4] object-cover"
           />
           <img
             src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80"
             alt="Living Room"
-            className="rounded-2xl w-full aspect-[3/4] object-cover mt-8"
+            className="rounded-none w-full aspect-[3/4] object-cover mt-8"
           />
         </div>
       </section>
@@ -133,16 +133,16 @@ export default function AboutPage() {
       {/* ─── VALUES ───────────────────────────────── */}
       <section className="bg-gray-50 py-20">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-orange-500 text-xs font-black uppercase tracking-widest text-center mb-3">Why Choose Us</p>
+          <p className="text-blue-600 text-xs font-black uppercase tracking-widest text-center mb-3">Why Choose Us</p>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-12">Our Core Values</h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map(({ Icon, title, desc }) => (
               <div
                 key={title}
-                className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-none p-7 border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5">
-                  <Icon className="text-2xl text-orange-500" />
+                <div className="w-12 h-12 bg-blue-50 rounded-none flex items-center justify-center mb-5">
+                  <Icon className="text-2xl text-blue-600" />
                 </div>
                 <h3 className="font-black text-gray-900 mb-2">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
@@ -154,18 +154,18 @@ export default function AboutPage() {
 
       {/* ─── TEAM ─────────────────────────────────── */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        <p className="text-orange-500 text-xs font-black uppercase tracking-widest text-center mb-3">The People</p>
+        <p className="text-blue-600 text-xs font-black uppercase tracking-widest text-center mb-3">The People</p>
         <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-12">Meet Our Team</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {team.map((m) => (
             <div key={m.name} className="text-center group">
-              <div className="relative overflow-hidden rounded-2xl mb-4 aspect-square">
+              <div className="relative overflow-hidden rounded-none mb-4 aspect-square">
                 <img
                   src={m.img}
                   alt={m.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/10 transition-colors duration-300 rounded-2xl" />
+                <div className="absolute inset-0 bg-blue-600/0 group-hover:bg-blue-600/10 transition-colors duration-300 rounded-none" />
               </div>
               <p className="font-black text-gray-900 text-sm">{m.name}</p>
               <p className="text-gray-400 text-xs mt-1">{m.role}</p>
@@ -186,13 +186,13 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => navigate("/")}
-              className="bg-orange-500 hover:bg-orange-600 text-white font-black px-8 py-4 rounded-full transition-colors"
+              className="bg-blue-600 hover:bg-black text-white font-black px-8 py-4 rounded-none transition-all"
             >
               Shop All Tiles
             </button>
             <button
               onClick={() => navigate("/contact")}
-              className="border border-white/20 hover:border-white/50 text-white font-bold px-8 py-4 rounded-full transition-colors"
+              className="border border-white/20 hover:border-white/50 text-white font-bold px-8 py-4 rounded-none transition-all"
             >
               Get Free Consultation
             </button>

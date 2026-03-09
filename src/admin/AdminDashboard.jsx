@@ -32,7 +32,7 @@ const AdminDashboard = () => {
 
   const stats = [
     { label: "Total Products", value: products.length, icon: <HiOutlineCube />, color: "text-blue-500", bg: "bg-blue-50" },
-    { label: "New Orders", value: "12", icon: <HiOutlineShoppingCart />, color: "text-orange-500", bg: "bg-orange-50" },
+    { label: "New Orders", value: "12", icon: <HiOutlineShoppingCart />, color: "text-blue-600", bg: "bg-blue-50" },
     { label: "Unread Inquiries", value: "5", icon: <HiOutlineMail />, color: "text-green-500", bg: "bg-green-50" },
   ];
 
@@ -78,7 +78,7 @@ const AdminDashboard = () => {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center">
             <h2 className="text-lg font-bold text-slate-800">Recently Added Products</h2>
-            <button onClick={() => navigate("/admin/upload")} className="text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors">
+            <button onClick={() => navigate("/admin/upload")} className="text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors">
               View All
             </button>
           </div>

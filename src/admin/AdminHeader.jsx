@@ -31,7 +31,7 @@ const AdminHeader = ({ title, subtitle, action }) => {
           <input 
             type="text" 
             placeholder="Search..." 
-            className="w-64 pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-orange-500/50 transition-all shadow-sm"
+            className="w-64 pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-none text-sm focus:outline-none focus:ring-2 focus:ring-blue-600/50 transition-all shadow-sm"
           />
           <HiOutlineSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-lg" />
         </div>
@@ -54,7 +54,7 @@ const AdminHeader = ({ title, subtitle, action }) => {
           <img 
             src="https://ui-avatars.com/api/?name=Admin+User&background=f97316&color=fff&bold=true" 
             alt="Admin Profile" 
-            className="w-10 h-10 rounded-full border-2 border-white shadow-sm ring-2 ring-transparent hover:ring-orange-500/30 transition-all"
+            className="w-10 h-10 rounded-none border-2 border-white shadow-sm ring-2 ring-transparent hover:ring-blue-600/30 transition-all"
           />
           
           <button 

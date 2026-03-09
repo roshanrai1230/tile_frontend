@@ -36,16 +36,16 @@ function CategoryPage() {
                     <h2 className="text-4xl font-black text-gray-900 capitalize tracking-tight">
                         {categoryName.toLowerCase()}
                     </h2>
-                    <div className="h-1.5 w-12 bg-orange-500 rounded-full" />
+                    <div className="h-1.5 w-12 bg-blue-600 rounded-none" />
                 </div>
-                <div className="bg-gray-100 px-4 py-1.5 rounded-full">
+                <div className="bg-gray-100 px-4 py-1.5 rounded-none">
                     <span className="text-sm font-bold text-gray-600 tracking-wide">{products.length} Products</span>
                 </div>
             </div>
 
             {loading ? (
                 <div className="flex justify-center items-center h-64">
-                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+                    <div className="animate-spin rounded-none h-12 w-12 border-b-2 border-blue-600"></div>
                 </div>
             ) : products.length > 0 ? (
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -55,11 +55,11 @@ function CategoryPage() {
                 </div>
             ) : (
 
-                <div className="text-center py-20 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                <div className="text-center py-20 bg-gray-100 rounded-none border border-dashed border-gray-300">
                     <p className="text-gray-400 text-lg">No products found in this category.</p>
                     <button
                         onClick={() => navigate('/')}
-                        className="mt-4 text-orange-500 font-semibold hover:underline"
+                        className="mt-4 text-blue-600 font-semibold hover:underline"
                     >
                         Back to Home
                     </button>

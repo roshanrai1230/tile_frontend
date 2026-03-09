@@ -123,17 +123,17 @@ function AdminUpload() {
         <div className="flex-1 overflow-y-auto px-8 pb-8 pt-2">
           
           {/* Tabs */}
-          <div className="flex mb-6 bg-white border border-slate-200 p-1 rounded-xl w-fit shadow-sm">
+          <div className="flex mb-6 bg-white border border-slate-200 p-1 rounded-none w-fit shadow-sm">
             <button 
               onClick={() => setActiveTab("list")}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'list' ? 'bg-slate-900 text-white shadow-md' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'}`}
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-none text-sm font-bold transition-all ${activeTab === 'list' ? 'bg-slate-900 text-white shadow-md' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'}`}
             >
               <HiOutlineViewGrid className="text-lg" />
               Existing Products
             </button>
             <button 
               onClick={() => setActiveTab("add")}
-              className={`flex items-center gap-2 px-6 py-2.5 rounded-lg text-sm font-bold transition-all ${activeTab === 'add' ? 'bg-orange-500 text-white shadow-md shadow-orange-500/20' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'}`}
+              className={`flex items-center gap-2 px-6 py-2.5 rounded-none text-sm font-bold transition-all ${activeTab === 'add' ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20' : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'}`}
             >
               <HiOutlinePlus className="text-lg" />
               Add New Product
@@ -152,11 +152,11 @@ function AdminUpload() {
               
               <div className="overflow-x-auto">
                 {loadingList ? (
-                  <div className="p-10 flex justify-center"><div className="w-8 h-8 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div></div>
+                  <div className="p-10 flex justify-center"><div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-none animate-spin"></div></div>
                 ) : productsList.length === 0 ? (
                   <div className="p-20 text-center">
                     <p className="text-slate-400 font-medium mb-4">No products found in the database.</p>
-                    <button onClick={() => setActiveTab("add")} className="px-6 py-2 bg-slate-900 text-white rounded-lg text-sm font-bold hover:bg-slate-800">Upload your first product</button>
+                    <button onClick={() => setActiveTab("add")} className="px-6 py-2 bg-slate-900 text-white rounded-none text-sm font-bold hover:bg-slate-800">Upload your first product</button>
                   </div>
                 ) : (
                   <table className="w-full text-left border-collapse">
@@ -205,7 +205,7 @@ function AdminUpload() {
                             </span>
                           </td>
                           <td className="p-4 pr-6 text-right">
-                            <button className="text-sm font-bold text-orange-600 hover:text-orange-700 opacity-0 group-hover:opacity-100 transition-opacity">Edit</button>
+                            <button className="text-sm font-bold text-blue-600 hover:text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity">Edit</button>
                           </td>
                         </tr>
                       ))}
@@ -230,7 +230,7 @@ function AdminUpload() {
                     required
                     value={product.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-all placeholder:text-slate-400"
+                    className="w-full px-4 py-3 rounded-none border border-slate-200 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 outline-none transition-all placeholder:text-slate-400"
                     placeholder="Enter a descriptive product name"
                   />
                 </div>
@@ -244,7 +244,7 @@ function AdminUpload() {
                       value={product.category}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-orange-500 outline-none transition-all bg-white"
+                      className="w-full px-4 py-3 rounded-none border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all bg-white"
                     >
                       {['BATHROOM', 'KITCHEN', 'LIVING ROOM', 'BEDROOM', 'FLOOR', 'WALL', 'OUTDOOR', 'PARKING'].map(cat => (
                         <option key={cat} value={cat}>{cat}</option>
@@ -262,7 +262,7 @@ function AdminUpload() {
                         required
                         value={product.priceSqFt}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-orange-500 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-none border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all"
                       />
                     </div>
                     <div className="space-y-4">
@@ -273,7 +273,7 @@ function AdminUpload() {
                         required
                         value={product.priceBox}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-orange-500 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-none border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -288,7 +288,7 @@ function AdminUpload() {
                       <select
                         value={currentSize}
                         onChange={(e) => setCurrentSize(e.target.value)}
-                        className="flex-1 px-4 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-orange-500 outline-none text-sm bg-white"
+                        className="flex-1 px-4 py-2 rounded-none border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none text-sm bg-white"
                       >
                         <option value="">Select Size</option>
                         <optgroup label="Square Sizes">
@@ -334,7 +334,7 @@ function AdminUpload() {
                       <select
                         value={currentColor}
                         onChange={(e) => setCurrentColor(e.target.value)}
-                        className="flex-1 px-4 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-orange-500 outline-none text-sm bg-white"
+                        className="flex-1 px-4 py-2 rounded-none border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none text-sm bg-white"
                       >
                         <option value="">Select Color</option>
                         <option value="White">White</option>
@@ -356,7 +356,7 @@ function AdminUpload() {
                     <div className="flex flex-wrap gap-2 min-h-[32px]">
                       {colors.length === 0 && <p className="text-xs text-slate-400 pt-2">No colors added.</p>}
                       {colors.map(c => (
-                        <span key={c} className="inline-flex items-center gap-1.5 px-3 py-1 bg-orange-50 text-orange-700 rounded-lg text-xs font-semibold border border-orange-100 shadow-sm">
+                        <span key={c} className="inline-flex items-center gap-1.5 px-3 py-1 bg-blue-50 text-blue-700 rounded-none text-xs font-semibold border border-blue-100 shadow-sm">
                           {c}
                           <button type="button" onClick={() => removeColor(c)} className="hover:text-red-500 transition-colors">
                             ✕
@@ -411,7 +411,7 @@ function AdminUpload() {
                     rows="4"
                     value={product.description}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-orange-500 outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-none border border-slate-200 focus:ring-2 focus:ring-blue-600 outline-none transition-all resize-none"
                     placeholder="Describe the product features, durability, etc."
                   ></textarea>
                 </div>
@@ -421,7 +421,7 @@ function AdminUpload() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 rounded-xl shadow-lg shadow-slate-200 transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'active:scale-[0.99]'}`}
+                    className={`w-full bg-slate-900 hover:bg-blue-600 text-white font-bold py-4 rounded-none shadow-lg shadow-slate-200 transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'active:scale-[0.99]'}`}
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">

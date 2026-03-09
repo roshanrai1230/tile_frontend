@@ -44,7 +44,7 @@ function Slider() {
   }, []);
 
   return (
-    <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl mb-12 uppercase tracking-tight">
+    <div className="relative w-full overflow-hidden rounded-none shadow-2xl mb-12 uppercase tracking-tight">
       <div
         className="flex transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -80,7 +80,7 @@ function Slider() {
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.4 }}
                   key={`b-${currentIndex}`}
-                  className="px-10 py-4 bg-orange-500 text-white font-black rounded-lg hover:bg-white hover:text-[#1a1a1a] transition-all text-sm tracking-widest shadow-xl"
+                  className="px-10 py-4 bg-blue-600 text-white font-black rounded-none hover:bg-black transition-all text-sm tracking-widest shadow-xl"
                 >
                   {slide.btnText}
                 </motion.button>
@@ -94,7 +94,7 @@ function Slider() {
       <button
         onClick={prevSlide}
         aria-label="Previous Slide"
-        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/40 hover:bg-black/80 text-white text-3xl md:text-2xl px-3 py-2 rounded-full border-0 cursor-pointer z-10 transition-colors duration-300 select-none"
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/40 hover:bg-black/80 text-white text-3xl md:text-2xl px-3 py-2 rounded-none border-0 cursor-pointer z-10 transition-colors duration-300 select-none"
       >
         &#10094;
       </button>
@@ -103,7 +103,7 @@ function Slider() {
       <button
         onClick={nextSlide}
         aria-label="Next Slide"
-        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/40 hover:bg-black/80 text-white text-3xl md:text-2xl px-3 py-2 rounded-full border-0 cursor-pointer z-10 transition-colors duration-300 select-none"
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/40 hover:bg-black/80 text-white text-3xl md:text-2xl px-3 py-2 rounded-none border-0 cursor-pointer z-10 transition-colors duration-300 select-none"
       >
         &#10095;
       </button>
@@ -115,7 +115,7 @@ function Slider() {
             key={idx}
             onClick={() => setCurrentIndex(idx)}
             aria-label={`Go to slide ${idx + 1}`}
-            className={`inline-block w-3 h-3 mx-1.5 rounded-full cursor-pointer transition-colors duration-300 ${idx === currentIndex ? "bg-gray-600" : "bg-gray-300"
+            className={`inline-block w-3 h-3 mx-1.5 rounded-none cursor-pointer transition-colors duration-300 ${idx === currentIndex ? "bg-gray-600" : "bg-gray-300"
               }`}
           />
         ))}

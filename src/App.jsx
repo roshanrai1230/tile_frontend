@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Link } from "react-router-dom";
 import TopNavbar from "./components/TopNavbar";
 import LeadPopup from "./components/LeadPopup";
 import Slider from "./components/Slider";
@@ -67,6 +67,14 @@ function AppContent() {
           <Route path="/admin/upload" element={<ProtectedRoute><AdminUpload /></ProtectedRoute>} />
           <Route path="/admin/orders" element={<ProtectedRoute><AdminOrders /></ProtectedRoute>} />
           <Route path="/admin/contact" element={<ProtectedRoute><AdminContact /></ProtectedRoute>} />
+
+          {/* Catch-all 404 */}
+          <Route path="*" element={<div className="min-h-[60vh] flex flex-col items-center justify-center bg-gray-50 px-6 text-center">
+            <h1 className="text-9xl font-black text-blue-600/10 absolute select-none">404</h1>
+            <h2 className="text-4xl font-black text-gray-900 mb-4 relative">Lost in Space?</h2>
+            <p className="text-gray-500 max-w-md mb-8 relative">The page you're looking for doesn't exist. Let's get you back to the premium collections.</p>
+            <Link to="/" className="px-8 py-3 bg-blue-600 text-white font-black rounded-none shadow-xl hover:bg-black transition-all relative">Back to Home</Link>
+          </div>} />
         </Routes>
       </main>
 
