@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
         // Check if user is logged in when the app loads
         const checkUser = async () => {
             try {
-                const res = await axios.get('/api/users/profile', { withCredentials: true });
+                const res = await axios.get('https://tile-backend-6xtp.onrender.com/api/users/profile', { withCredentials: true });
                 setUser(res.data);
             } catch (error) {
                 // If 401, it means no valid cookie/token, which is fine
@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const res = await axios.post('/api/users/login', { email, password }, { withCredentials: true });
+            const res = await axios.post('https://tile-backend-6xtp.onrender.com/api/users/login', { email, password }, { withCredentials: true });
             setUser(res.data);
             return { success: true, data: res.data };
         } catch (error) {
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (name, email, password) => {
         try {
-            const res = await axios.post('/api/users/register', { name, email, password }, { withCredentials: true });
+            const res = await axios.post('https://tile-backend-6xtp.onrender.com/api/users/register', { name, email, password }, { withCredentials: true });
             setUser(res.data);
             return { success: true, data: res.data };
         } catch (error) {
@@ -53,7 +53,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            await axios.post('/api/users/logout', {}, { withCredentials: true });
+            await axios.post('https://tile-backend-6xtp.onrender.com/api/users/logout', {}, { withCredentials: true });
             setUser(null);
         } catch (error) {
             console.error("Logout failed", error);

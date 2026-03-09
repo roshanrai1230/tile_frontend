@@ -37,7 +37,7 @@ function AdminUpload() {
   const fetchProducts = async () => {
     setLoadingList(true);
     try {
-      const res = await axios.get('/api/products/all');
+      const res = await axios.get('https://tile-backend-6xtp.onrender.com/api/products/all');
       setProductsList(res.data || []);
     } catch (err) {
       console.error("Failed to fetch products", err);
@@ -94,7 +94,7 @@ function AdminUpload() {
 
     try {
       // Must use withCredentials true because /add is protected by admin middleware
-      await axios.post('/api/products/add', data, { withCredentials: true });
+      await axios.post('https://tile-backend-6xtp.onrender.com/api/products/add', data, { withCredentials: true });
       alert("Success! Product Uploaded.");
       // Reset form and switch to list tab
       setProduct({ name: "", category: "BATHROOM", description: "", priceSqFt: "", priceBox: "" });
