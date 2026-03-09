@@ -60,6 +60,11 @@ export default function AboutPage() {
 
   return (
     <div className="bg-white min-h-screen font-sans">
+      <Helmet>
+        <title>About Us | MyTiles - India's Trusted Luxury Tile Brand Since 2010</title>
+        <meta name="description" content="Discover MyTiles, the leader in premium tiling solutions in India. Learn about our heritage, commitment to quality, and expansive collection of luxury tiles." />
+        <meta name="keywords" content="about MyTiles, tile heritage India, digital tiles brand, quality flooring solutions, MyTiles story" />
+      </Helmet>
 
       {/* ─── HERO ─────────────────────────────────── */}
       <section className="relative bg-[#111] text-white overflow-hidden">

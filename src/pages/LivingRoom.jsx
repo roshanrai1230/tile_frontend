@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -21,6 +22,11 @@ function LivingRoom() {
 
   return (
     <div className="max-w-[1250px] mx-auto px-4 py-10">
+      <Helmet>
+        <title>Living Room Tiles | Luxury Floor & Accent Wall Tiles - MyTiles</title>
+        <meta name="description" content="Enhance your living space with MyTiles' luxury floor and accent wall tiles. Choose from a vast range of vitrified, porcelain, and marble-finish tiles." />
+        <meta name="keywords" content="living room tiles, living room floor tiles, accent wall tiles, vitrified tiles for living room, luxury flooring India" />
+      </Helmet>
       <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">Living Room Tiles Collection</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
         {products.map((item) => (

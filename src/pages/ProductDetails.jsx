@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { HiStar, HiOutlineHeart, HiCheckCircle, HiOutlineInformationCircle } from "react-icons/hi";
@@ -79,6 +80,16 @@ const ProductDetails = () => {
           </div>
         </div>
       )}
+
+      <Helmet>
+        {product && (
+          <>
+            <title>{`${product.name} | Premium ${product.category} Tiles - MyTiles`}</title>
+            <meta name="description" content={`Buy ${product.name} at MyTiles. High-quality ${product.category} tiles. Best price in India. Build your dream space today.`} />
+            <meta name="keywords" content={`${product.name}, ${product.category}, tiles online, premium tiles, vitrified tiles, MyTiles ${product.name}`} />
+          </>
+        )}
+      </Helmet>
 
       {/* Breadcrumb */}
       <div className="text-sm text-gray-400 mb-6 flex items-center gap-2">

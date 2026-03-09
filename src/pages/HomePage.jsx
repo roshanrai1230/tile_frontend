@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ProductCard from "../components/ProductCard";
@@ -199,6 +200,11 @@ export default function HomePage() {
 
   return (
     <div className="bg-white min-h-screen">
+      <Helmet>
+        <title>MyTiles | Premium Floor, Wall, Bathroom & Kitchen Tiles India</title>
+        <meta name="description" content="India's leading brand for luxury tiles. Explore 2500+ designs in vitrified, ceramic, and digital tiles. Shop bathroom and kitchen tiles online." />
+        <meta name="keywords" content="luxury tiles, premium flooring, vitrified tiles India, digital wall tiles, ceramic floor tiles, designer tiles, MyTiles home, best tiles for kitchen, bathroom tile online" />
+      </Helmet>
 
       {/* ══════════════════════════════════════════ */}
       {/* HERO BANNER — AUTO-ROTATING CAROUSEL      */}

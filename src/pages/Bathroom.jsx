@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -21,6 +22,11 @@ function Bathroom() {
 
   return (
     <div className="max-w-[1250px] mx-auto px-4 py-10">
+      <Helmet>
+        <title>Bathroom Tiles | Designer & Anti-Skid Bathroom Wall & Floor Tiles - MyTiles</title>
+        <meta name="description" content="Shop the best collection of bathroom tiles at MyTiles. Find anti-skid floor tiles and waterproof wall tiles in various sizes and finishes. Best quality for your dream bathroom." />
+        <meta name="keywords" content="bathroom tiles, bathroom wall tiles, bathroom floor tiles, anti-skid tiles, waterproof tiles, modern bathroom design" />
+      </Helmet>
       <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">Bathroom Tiles Collection</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
         {products.map((item) => (
