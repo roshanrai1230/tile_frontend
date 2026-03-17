@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import {
   HiOutlineSearch,
   HiOutlineUser,
@@ -229,12 +229,19 @@ function TopNavbar() {
           <ul className="flex gap-0 list-none m-0 p-0 overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden">
             {navLinks.map((item, i) => (
               <li key={i} className="shrink-0">
-                <Link
+                <NavLink
                   to={item.link}
-                  className="inline-block px-4 py-3 text-[13px] font-semibold text-gray-700 uppercase tracking-wide no-underline hover:text-blue-600 hover:border-b-2 hover:border-blue-600 transition-all duration-150 whitespace-nowrap border-b-2 border-transparent"
+                  className={({ isActive }) => 
+                    `inline-block px-4 py-3 text-[13px] font-semibold uppercase tracking-wide no-underline transition-all duration-150 whitespace-nowrap border-b-2 ${
+                      isActive 
+                        ? "text-blue-600 border-blue-600" 
+                        : "text-gray-700 border-transparent hover:text-blue-600 hover:border-blue-600"
+                    }`
+                  }
+                  end={item.link === "/"}
                 >
                   {item.name}
-                </Link>
+                </NavLink>
               </li>
             ))}
             {/* Right side links like TileBar */}

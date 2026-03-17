@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const items = [
   { name: "All Tiles", link: "/" },
@@ -20,12 +20,17 @@ function SecondNavbar() {
         <ul className="flex gap-6 overflow-x-auto scrollbar-none list-none m-0 p-0 [&::-webkit-scrollbar]:hidden">
           {items.map((item, index) => (
             <li key={index} className="shrink-0">
-              <Link
+              <NavLink
                 to={item.link}
-                className="text-white text-sm font-bold whitespace-nowrap no-underline hover:text-orange-400 transition-colors duration-200"
+                className={({ isActive }) =>
+                  `text-sm font-bold whitespace-nowrap no-underline transition-colors duration-200 ${
+                    isActive ? "text-blue-400" : "text-white hover:text-orange-400"
+                  }`
+                }
+                end={item.link === "/"}
               >
                 {item.name}
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
