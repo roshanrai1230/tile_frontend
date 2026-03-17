@@ -35,7 +35,7 @@ const Footer = () => {
         {/* Brand Column */}
         <div className="lg:col-span-1">
           <h2 className="text-3xl font-black tracking-tight mb-4">
-            My<span className="text-blue-600">Tiles</span>
+            CÉRÀGRÈS <span className="text-blue-600">LUXE</span>
           </h2>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
             Premium quality wall and floor tiles with world-class designs. Transforming your dream spaces since 2010.

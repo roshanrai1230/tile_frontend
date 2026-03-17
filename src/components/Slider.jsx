@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 const slides = [
   {
     id: 1,
-    image: "https://content.iconworldoftile.com/content/slider/slider-7.jpg",
+    image: "/fwdimagesforsite 1/Alchimia 2.jpg",
     title: "Luxury Marble Mastery",
     subtitle: "Experience the elegance of premium large-format marble tiles.",
     btnText: "Explore Collection"
   },
   {
     id: 2,
-    image: "https://i0.wp.com/wp.tilemountain.co.uk/wp-content/uploads/2019/07/03-TileMountain_3160326_PalatinaWhiteGlossTiles.jpg?resize=1000%2C667&ssl=1",
+    image: "/fwdimagesforsite 1/Always Moka.jpg",
     title: "Timeless White Gloss",
     subtitle: "Brighten your space with our signature Palatina collection.",
     btnText: "Shop Now"
   },
   {
     id: 3,
-    image: "https://www.roccia.com/cdn/shop/collections/Kitchen_Floor_Tile_1_1_67d4a759-2470-4e44-beab-ce35aea7e54c.jpg?v=1754469575",
+    image: "/fwdimagesforsite 1/Arizona Fresco 2.jpg",
     title: "Designer Kitchen Concepts",
     subtitle: "Stunning floors and backsplashes for the modern home.",
     btnText: "Get Inspired"
   },
   {
     id: 4,
-    image: "https://www.roccia.com/cdn/shop/files/Cianni_Residence_-_Kitchen_Banner.jpg?v=1727103735&width=1100",
+    image: "/fwdimagesforsite 1/Brush.jpg",
     title: "Architectural Excellence",
     subtitle: "Premium wood-look planks for a warm, natural feel.",
     btnText: "View Details"

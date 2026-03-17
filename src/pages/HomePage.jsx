@@ -38,7 +38,7 @@ const filterOptions = {
 // ─── Hero Slides ───────────────────────────────────────
 const heroSlides = [
   {
-    image: "https://www.roccia.com/cdn/shop/files/Cianni_Residence_-_Kitchen_Banner.jpg?v=1727103735&width=1100",
+    image: "/fwdimagesforsite 1/Alchimia 2.jpg",
     tag: "New Collection",
     title: "DESIGN STARTS",
     highlight: "HERE",
@@ -46,7 +46,7 @@ const heroSlides = [
     link: "/category/FLOOR",
   },
   {
-    image: "https://i0.wp.com/wp.tilemountain.co.uk/wp-content/uploads/2019/07/03-TileMountain_3160326_PalatinaWhiteGlossTiles.jpg?resize=1000%2C667&ssl=1",
+    image: "/fwdimagesforsite 1/Always Moka.jpg",
     tag: "Wall Collection",
     title: "ELEVATE YOUR",
     highlight: "WALLS",
@@ -54,7 +54,7 @@ const heroSlides = [
     link: "/category/WALL",
   },
   {
-    image: "https://www.roccia.com/cdn/shop/collections/Kitchen_Floor_Tile_1_1_67d4a759-2470-4e44-beab-ce35aea7e54c.jpg?v=1754469575",
+    image: "/fwdimagesforsite 1/Arizona Fresco 2.jpg",
     tag: "Kitchen Special",
     title: "KITCHEN",
     highlight: "PERFECTION",
@@ -62,7 +62,7 @@ const heroSlides = [
     link: "/category/KITCHEN",
   },
   {
-    image: "https://content.iconworldoftile.com/content/slider/slider-7.jpg",
+    image: "/fwdimagesforsite 1/Brush.jpg",
     tag: "Outdoor Range",
     title: "BEYOND THE",
     highlight: "INTERIOR",
@@ -201,91 +201,90 @@ export default function HomePage() {
   return (
     <div className="bg-white min-h-screen">
       <Helmet>
-        <title>MyTiles | Premium Floor, Wall, Bathroom & Kitchen Tiles India</title>
+        <title>CÉRÀGRÈS LUXE | Premium Floor, Wall, Bathroom & Kitchen Tiles India</title>
         <meta name="description" content="India's leading brand for luxury tiles. Explore 2500+ designs in vitrified, ceramic, and digital tiles. Shop bathroom and kitchen tiles online." />
-        <meta name="keywords" content="luxury tiles, premium flooring, vitrified tiles India, digital wall tiles, ceramic floor tiles, designer tiles, MyTiles home, best tiles for kitchen, bathroom tile online" />
+        <meta name="keywords" content="luxury tiles, premium flooring, vitrified tiles India, digital wall tiles, ceramic floor tiles, designer tiles, CÉRÀGRÈS LUXE home, best tiles for kitchen, bathroom tile online" />
       </Helmet>
 
       {/* ══════════════════════════════════════════ */}
       {/* HERO BANNER — AUTO-ROTATING CAROUSEL      */}
       {/* ══════════════════════════════════════════ */}
-      <section className="relative mx-4 md:mx-8 mt-4 rounded-none overflow-hidden flex flex-col md:flex-row min-h-[280px] md:min-h-[340px] bg-[#f0f0f0] shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+      <section className="relative w-full h-[60vh] min-h-[450px] overflow-hidden flex items-center bg-gray-900">
 
-        {/* Left — Text (fade transition) */}
+        {/* Background Image (fade transition) */}
+        <img
+          key={`img-${heroIndex}`}
+          src={slide.image}
+          alt={slide.title}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{
+            opacity: heroVisible ? 1 : 0,
+            transition: "opacity 0.5s ease-in-out",
+          }}
+        />
+
+        {/* Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+
+        {/* Content (fade transition) */}
         <div
-          className="flex-1 flex flex-col justify-center px-8 md:px-14 py-10 z-10 transition-opacity duration-400"
-          style={{ opacity: heroVisible ? 1 : 0, transition: "opacity 0.4s ease" }}
+          className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-12 py-10 transition-opacity duration-500"
+          style={{ opacity: heroVisible ? 1 : 0 }}
         >
-          <p className="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2">
+          <p className="text-sm font-bold uppercase tracking-widest text-[#e8c4a0] mb-2 drop-shadow-md">
             {slide.tag}
           </p>
-          <h1 className="text-4xl md:text-5xl font-black leading-tight text-gray-900 mb-4">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight text-white mb-4 drop-shadow-lg">
             {slide.title}
             <br />
-            <span className="text-blue-600">{slide.highlight}</span>
+            <span className="text-white">{slide.highlight}</span>
           </h1>
-          <p className="text-gray-500 text-sm max-w-xs leading-relaxed mb-6">
+          <p className="text-gray-200 text-sm md:text-base max-w-md leading-relaxed mb-6 drop-shadow-md">
             {slide.desc}
           </p>
-          <div className="flex gap-3">
+          <div className="flex gap-4">
             <button
               onClick={() => navigate(slide.link)}
-              className="px-6 py-2.5 bg-gray-900 text-white text-sm font-bold rounded-none hover:bg-gray-700 transition-colors tracking-wide"
+              className="px-6 py-3 bg-[#e8c4a0] text-gray-900 text-sm font-bold uppercase tracking-wider rounded-none hover:bg-white transition-colors shadow-lg"
             >
               Shop Now
             </button>
             <button
               onClick={() => navigate("/")}
-              className="px-6 py-2.5 border border-gray-400 text-gray-700 text-sm font-bold rounded-none hover:bg-gray-100 transition-colors tracking-wide"
+              className="px-6 py-3 border-2 border-white text-white text-sm font-bold uppercase tracking-wider rounded-none hover:bg-white hover:text-gray-900 transition-colors shadow-lg"
             >
               View All
             </button>
           </div>
 
           {/* Dots */}
-          <div className="flex gap-2 mt-6">
+          <div className="flex gap-2 mt-8">
             {heroSlides.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goToSlide(i)}
-                className={`rounded-full transition-all duration-300 ${
+                className={`rounded-none transition-all duration-300 ${
                   i === heroIndex
-                    ? "w-6 h-2 bg-gray-900"
-                    : "w-2 h-2 bg-gray-300 hover:bg-gray-500 rounded-none"
+                    ? "w-8 h-1.5 bg-[#e8c4a0]"
+                    : "w-3 h-1.5 bg-white/40 hover:bg-white/70"
                 }`}
               />
             ))}
           </div>
         </div>
 
-        {/* Right — Hero Image (fade transition) */}
-        <div className="w-full md:w-[42%] relative">
-          <img
-            key={heroIndex}
-            src={slide.image}
-            alt={slide.title}
-            className="w-full h-full object-cover min-h-[220px]"
-            style={{
-              opacity: heroVisible ? 1 : 0,
-              transition: "opacity 0.4s ease",
-            }}
-          />
-          {/* overlay fade left */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f5f0ea] via-[#f5f0ea]/30 to-transparent hidden md:block" />
-        </div>
-
         {/* Prev / Next Arrows */}
         <button
           onClick={prevHero}
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-700 rounded-full p-1.5 shadow z-20 transition-all"
+          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/80 text-white rounded-none p-2 shadow-lg z-20 transition-all border border-white/10"
         >
-          <HiChevronLeft className="text-xl" />
+          <HiChevronLeft className="text-2xl md:text-3xl" />
         </button>
         <button
           onClick={nextHero}
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-700 rounded-full p-1.5 shadow z-20 transition-all md:right-auto md:left-[56%]"
+          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/80 text-white rounded-none p-2 shadow-lg z-20 transition-all border border-white/10"
         >
-          <HiChevronRight className="text-xl" />
+          <HiChevronRight className="text-2xl md:text-3xl" />
         </button>
       </section>
 
@@ -359,7 +358,7 @@ export default function HomePage() {
                   setActiveCategory(cat.value);
                   document.getElementById('product-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
-                className="relative shrink-0 w-[220px] md:w-[260px] aspect-[3/4] rounded-xl group/card overflow-hidden bg-gray-100"
+                className="relative shrink-0 w-[220px] md:w-[260px] aspect-[3/4] rounded-none group/card overflow-hidden bg-gray-100"
               >
                 <img
                   src={cat.image}
@@ -409,8 +408,26 @@ export default function HomePage() {
 
       <section 
         className="mt-6 px-4 md:px-8 border-y border-gray-200 py-3 sticky bg-white z-[100] transition-all duration-300"
-        style={{ top: isScrolled ? "108px" : "152px" }}
+        style={{ 
+          top: isScrolled ? "var(--header-height-scrolled, 64px)" : "var(--header-height-initial, 64px)",
+          // For mobile, the category nav is hidden, so header is always 64px + optional 44px announcement bar.
+          // On desktop, category nav adds 44px. We can use a responsive class approach instead.
+        }}
       >
+        <style>
+          {`
+            @media (min-width: 768px) {
+              section.sticky {
+                top: ${isScrolled ? '108px' : '152px'} !important;
+              }
+            }
+            @media (max-width: 767px) {
+              section.sticky {
+                top: ${isScrolled ? '64px' : '108px'} !important;
+              }
+            }
+          `}
+        </style>
         {/* Changed from overflow-x-auto to flex-wrap to prevent clipping absolute dropdowns */}
         <div className="flex flex-wrap items-center gap-2">
           {/* Filter buttons */}

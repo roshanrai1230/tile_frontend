@@ -17,8 +17,8 @@ const AdminLogin = () => {
     setLoading(true);
 
     try {
-      // Send credentials; axios configured in App.js to send/receive cookies
-      const res = await axios.post('https://tile-backend-6xtp.onrender.com/api/auth/login', {
+      // Pointing to LOCAL backend where password was reset
+      const res = await axios.post('http://localhost:5000/api/auth/login', {
         email,
         password
       }, {
@@ -41,9 +41,7 @@ const AdminLogin = () => {
     <div className="min-h-screen bg-slate-50 flex flex-col justify-center items-center p-4">
       {/* Logo Area */}
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-black text-slate-900 tracking-tight">
-          MY<span className="text-blue-600">TILES</span>
-        </h1>
+        <img src="/logo.jpg" alt="CÉRÀGRÈS LUXE" className="h-16 w-auto mx-auto mb-2" />
         <p className="text-sm font-bold text-slate-400 uppercase tracking-widest mt-1">Admin Portal</p>
       </div>
 

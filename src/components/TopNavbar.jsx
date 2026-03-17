@@ -109,10 +109,8 @@ function TopNavbar() {
         <div className="max-w-[1400px] mx-auto px-6 flex items-center justify-between h-[64px] gap-6">
 
           {/* Logo */}
-          <Link to="/" className="shrink-0 no-underline flex items-center gap-1">
-            <span className="text-2xl font-black tracking-tighter text-blue-800">
-              my<span className="text-blue-600">tiles</span>
-            </span>
+          <Link to="/" className="shrink-0 no-underline flex items-center">
+            <img src="/logo.jpg" alt="CÉRÀGRÈS LUXE" className="h-[40px] md:h-[50px] w-auto object-contain" />
           </Link>
 
           {/* Desktop Search Bar */}
@@ -271,8 +269,8 @@ function TopNavbar() {
           }`}
       >
         <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-          <Link to="/" className="text-xl font-black tracking-tighter text-gray-900 no-underline" onClick={() => setIsMenuOpen(false)}>
-            my<span className="text-blue-600">tiles</span>
+          <Link to="/" className="shrink-0 no-underline flex items-center" onClick={() => setIsMenuOpen(false)}>
+            <img src="/logo.jpg" alt="CÉRÀGRÈS LUXE" className="h-[35px] w-auto object-contain" />
           </Link>
           <button onClick={() => setIsMenuOpen(false)} className="text-2xl text-gray-600">
             <HiX />
