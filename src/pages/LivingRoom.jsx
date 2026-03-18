@@ -23,8 +23,8 @@ function LivingRoom() {
   return (
     <div className="max-w-[1250px] mx-auto px-4 py-10">
       <Helmet>
-        <title>Living Room Tiles | Luxury Floor & Accent Wall Tiles - MyTiles</title>
-        <meta name="description" content="Enhance your living space with MyTiles' luxury floor and accent wall tiles. Choose from a vast range of vitrified, porcelain, and marble-finish tiles." />
+        <title>Living Room Tiles | Luxury Floor & Accent Wall Tiles - Ceragreslux</title>
+        <meta name="description" content="Enhance your living space with Ceragreslux' luxury floor and accent wall tiles. Choose from a vast range of vitrified, porcelain, and marble-finish tiles." />
         <meta name="keywords" content="living room tiles, living room floor tiles, accent wall tiles, vitrified tiles for living room, luxury flooring India" />
       </Helmet>
       <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">Living Room Tiles Collection</h2>

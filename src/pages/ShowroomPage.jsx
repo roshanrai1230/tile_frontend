@@ -4,10 +4,10 @@ import { HiOutlineLocationMarker, HiOutlinePhone, HiOutlineMail, HiOutlineClock,
 const showrooms = [
   {
     city: "New Delhi",
-    name: "MyTiles Flagship Experience Center",
+    name: "Ceragreslux Flagship Experience Center",
     address: "A-15, Rajouri Garden, Ring Road, New Delhi - 110027",
     phone: "+91 98765 43210",
-    email: "delhi@mytiles.com",
+    email: "delhi@ceragreslux.com",
     hours: "10:00 AM - 8:00 PM (All Days)",
     img: "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=1470&auto=format&fit=crop",
     mapLink: "#",
@@ -15,10 +15,10 @@ const showrooms = [
   },
   {
     city: "Mumbai",
-    name: "MyTiles Design Studio",
+    name: "Ceragreslux Design Studio",
     address: "Unit 4, Ground Floor, Kamala Mills Compound, Lower Parel, Mumbai - 400013",
     phone: "+91 98765 43211",
-    email: "mumbai@mytiles.com",
+    email: "mumbai@ceragreslux.com",
     hours: "10:30 AM - 7:30 PM (Closed on Tuesdays)",
     img: "https://images.unsplash.com/photo-1618221195710-dd6b1e94cfd5?q=80&w=1400&auto=format&fit=crop",
     mapLink: "#",
@@ -26,10 +26,10 @@ const showrooms = [
   },
   {
     city: "Bengaluru",
-    name: "MyTiles Selection Center",
+    name: "Ceragreslux Selection Center",
     address: "100 Feet Road, Indiranagar, Bengaluru - 560038",
     phone: "+91 98765 43212",
-    email: "blr@mytiles.com",
+    email: "blr@ceragreslux.com",
     hours: "10:00 AM - 8:00 PM (All Days)",
     img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1470&auto=format&fit=crop",
     mapLink: "#",
@@ -66,7 +66,7 @@ export default function ShowroomPage() {
       <section className="max-w-[1400px] mx-auto px-6 py-24">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Find A Showroom Near You</h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">We're expanding rapidly. Visit our flagship locations to experience the best of MyTiles.</p>
+          <p className="text-gray-500 max-w-2xl mx-auto">We're expanding rapidly. Visit our flagship locations to experience the best of Ceragreslux.</p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-10">

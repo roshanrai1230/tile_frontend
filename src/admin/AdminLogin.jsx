@@ -70,7 +70,7 @@ const AdminLogin = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="block w-full pl-10 pr-3 py-3 border border-slate-200 rounded-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 sm:text-sm transition-colors text-slate-800 bg-slate-50 focus:bg-white"
-                placeholder="admin@mytiles.com"
+                placeholder="admin@ceragreslux.com"
               />
             </div>
           </div>

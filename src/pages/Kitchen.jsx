@@ -23,8 +23,8 @@ function Kitchen() {
   return (
     <div className="max-w-[1250px] mx-auto px-4 py-10">
       <Helmet>
-        <title>Premium Kitchen Tiles | Modern Kitchen Wall & Floor Designs - MyTiles</title>
-        <meta name="description" content="Upgrade your kitchen with MyTiles' premium collection of anti-skid, heat-resistant, and stylish kitchen tiles. Explore modern wall and floor designs." />
+        <title>Premium Kitchen Tiles | Modern Kitchen Wall & Floor Designs - Ceragreslux</title>
+        <meta name="description" content="Upgrade your kitchen with Ceragreslux' premium collection of anti-skid, heat-resistant, and stylish kitchen tiles. Explore modern wall and floor designs." />
         <meta name="keywords" content="kitchen tiles, kitchen wall tiles, anti-skid floor tiles, modern kitchen design, kitchen tiles India" />
       </Helmet>
       <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">Kitchen Tiles Collection</h2>

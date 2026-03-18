@@ -15,11 +15,11 @@ const AdminSidebar = () => {
 
   return (
     <div className="flex flex-col w-64 h-screen bg-slate-900 border-r border-slate-800 text-slate-300 fixed left-0 top-0 z-50">
-      
+
       {/* Brand Logo */}
       <div className="flex items-center justify-center h-20 border-b border-slate-800/60 mb-6">
         <Link to="/" className="text-2xl font-black tracking-wider text-white">
-          MY<span className="text-blue-600">TILES</span>
+          shop<span className="text-blue-600">ceragresluxe</span>
           <span className="block text-[10px] text-slate-500 tracking-[0.2em] font-medium text-center -mt-1 uppercase">Admin Panel</span>
         </Link>
       </div>
@@ -32,11 +32,10 @@ const AdminSidebar = () => {
             <button
               key={item.path}
               onClick={() => navigate(item.path)}
-              className={`w-full flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 group ${
-                isActive 
-                  ? "bg-slate-800 text-orange-400 shadow-sm" 
-                  : "text-slate-400 hover:bg-slate-800/50 hover:text-slate-200"
-              }`}
+              className={`w-full flex items-center gap-3.5 px-4 py-3.5 rounded-xl text-sm font-semibold transition-all duration-300 group ${isActive
+                ? "bg-slate-800 text-orange-400 shadow-sm"
+                : "text-slate-400 hover:bg-slate-800/50 hover:text-slate-200"
+                }`}
             >
               <div className={`text-xl transition-transform duration-300 ${isActive ? "scale-110" : "group-hover:scale-110"}`}>
                 {item.icon}
@@ -49,7 +48,7 @@ const AdminSidebar = () => {
 
       {/* Footer / Logout */}
       <div className="p-4 border-t border-slate-800/60">
-        <button 
+        <button
           onClick={() => navigate("/")}
           className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-400 hover:bg-red-500/10 hover:text-red-400 transition-all duration-300 group"
         >

@@ -5,7 +5,7 @@ const testimonials = [
     {
         name: "Rajesh Kumar",
         role: "Architect",
-        comment: "The quality of marble tiles from My Tiles is exceptional. Their designs transformed my latest project into a luxury masterpiece.",
+        comment: "The quality of marble tiles from Ceragresluxs is exceptional. Their designs transformed my latest project into a luxury masterpiece.",
         rating: 5
     },
     {

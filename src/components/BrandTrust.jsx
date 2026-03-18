@@ -30,7 +30,7 @@ const BrandTrust = () => {
             <div className="max-w-[1250px] mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-extrabold mb-4 uppercase tracking-tighter">
-                        Why Choose <span className="text-blue-600">My Tiles?</span>
+                        Why Choose <span className="text-blue-600">Ceragresluxs?</span>
                     </h2>
                     <div className="w-20 h-1 bg-blue-600 mx-auto rounded-none" />
                 </div>

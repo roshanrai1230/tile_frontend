@@ -69,7 +69,7 @@ export default function LeadPopup() {
               Hamari team aapse bahut jald contact karegi.
             </p>
             <p className="text-gray-500 text-sm mt-2">
-              Thank you for choosing MyTiles!
+              Thank you for choosing Ceragreslux!
             </p>
           </div>
         ) : (
@@ -78,7 +78,7 @@ export default function LeadPopup() {
             {/* Header */}
             <div className="text-center mb-6">
               <h2 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-wide">
-                WELCOME TO <span className="text-blue-600">MY TILES</span>
+                WELCOME TO <span className="text-blue-600">CeragresluxS</span>
               </h2>
               <p className="text-gray-500 text-sm">
                 Please provide your details below to get best recommendations and personalized offers!

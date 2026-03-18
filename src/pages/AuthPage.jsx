@@ -44,7 +44,7 @@ export default function AuthPage() {
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-full h-full sm:w-[50vw] sm:h-screen sm:bg-[#111] overflow-hidden hidden sm:flex items-center justify-center p-12">
         <div className="text-white z-10 max-w-md">
-            <h2 className="text-5xl font-black mb-6 leading-tight uppercase tracking-tighter italic">Welcome to <br/><span className="text-blue-600">MyTiles.</span></h2>
+            <h2 className="text-5xl font-black mb-6 leading-tight uppercase tracking-tighter italic">Welcome to <br/><span className="text-blue-600">Ceragreslux.</span></h2>
             <p className="text-gray-300 text-lg">Sign in to save your favorite collections, track your orders, and manage your trade pricing seamlessly.</p>
         </div>
         <img 

@@ -61,16 +61,16 @@ export default function AboutPage() {
   return (
     <div className="bg-white min-h-screen font-sans">
       <Helmet>
-        <title>About Us | MyTiles - India's Trusted Luxury Tile Brand Since 2010</title>
-        <meta name="description" content="Discover MyTiles, the leader in premium tiling solutions in India. Learn about our heritage, commitment to quality, and expansive collection of luxury tiles." />
-        <meta name="keywords" content="about MyTiles, tile heritage India, digital tiles brand, quality flooring solutions, MyTiles story" />
+        <title>About Us | Ceragreslux - India's Trusted Luxury Tile Brand Since 2010</title>
+        <meta name="description" content="Discover Ceragreslux, the leader in premium tiling solutions in India. Learn about our heritage, commitment to quality, and expansive collection of luxury tiles." />
+        <meta name="keywords" content="about Ceragreslux, tile heritage India, digital tiles brand, quality flooring solutions, Ceragreslux story" />
       </Helmet>
 
       {/* ─── HERO ─────────────────────────────────── */}
       <section className="relative bg-[#111] text-white overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?w=1400&q=80"
-          alt="About MyTiles"
+          alt="About Ceragreslux"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
         <div className="relative max-w-4xl mx-auto px-6 py-28 text-center">
@@ -80,7 +80,7 @@ export default function AboutPage() {
             Crafted for <span className="text-blue-600">Perfection</span>
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
-            Since 2010, MyTiles has been India's most trusted name in premium tile solutions —
+            Since 2010, Ceragreslux has been India's most trusted name in premium tile solutions —
             bringing beauty, durability, and innovation to homes and commercial spaces across the country.
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
             India's #1 Destination<br />for Premium Tiles
           </h2>
           <p className="text-gray-500 leading-relaxed mb-4">
-            Founded in New Delhi, MyTiles began with a simple idea: everyone deserves a beautiful home.
+            Founded in New Delhi, Ceragreslux began with a simple idea: everyone deserves a beautiful home.
             Over 15 years later, we've grown into a nationwide brand with over 2,500 tile designs spanning
             kitchens, bathrooms, living rooms, outdoors, and more.
           </p>

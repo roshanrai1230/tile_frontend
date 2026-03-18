@@ -49,7 +49,7 @@ const Footer = () => {
             </p>
             <p className="flex items-center gap-2.5 text-gray-400 text-sm">
               <HiOutlineMail className="text-blue-600 shrink-0 text-base" />
-              info@mytiles.com
+              info@ceragreslux.com
             </p>
             <p className="flex items-center gap-2.5 text-gray-400 text-sm">
               <HiOutlineLocationMarker className="text-blue-600 shrink-0 text-base" />
@@ -148,7 +148,7 @@ const Footer = () => {
           {subscribed ? (
             <div className="bg-green-500/10 border border-green-500/30 rounded-none p-4 text-center">
               <p className="text-green-400 font-bold text-sm">✓ You're subscribed!</p>
-              <p className="text-green-400/70 text-xs mt-1">Thanks for joining MyTiles.</p>
+              <p className="text-green-400/70 text-xs mt-1">Thanks for joining Ceragreslux.</p>
             </div>
           ) : (
             <form onSubmit={handleSubscribe} className="space-y-3">
@@ -188,7 +188,7 @@ const Footer = () => {
       <div className="border-t border-white/8 px-6 py-5">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-600 text-center">
-            © 2025 MyTiles. All Rights Reserved. Crafted with ❤️ in India.
+            © 2025 Ceragreslux. All Rights Reserved. Crafted with ❤️ in India.
           </p>
           <div className="flex gap-5">
             {["Privacy Policy", "Terms of Use", "Sitemap"].map((link) => (

@@ -17,7 +17,7 @@ export default function TradePage() {
         
         <div className="relative max-w-5xl mx-auto text-center z-10 w-full flex flex-col items-center">
           <span className="inline-block py-1 px-4 rounded-none bg-blue-600/10 border border-blue-600/20 text-blue-500 text-sm font-black tracking-[0.2em] uppercase mb-8 backdrop-blur-md">
-            MyTiles Pro
+            Ceragreslux Pro
           </span>
           <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-[1.1]">
             Elevate Your <br />

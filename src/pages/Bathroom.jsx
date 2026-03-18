@@ -23,8 +23,8 @@ function Bathroom() {
   return (
     <div className="max-w-[1250px] mx-auto px-4 py-10">
       <Helmet>
-        <title>Bathroom Tiles | Designer & Anti-Skid Bathroom Wall & Floor Tiles - MyTiles</title>
-        <meta name="description" content="Shop the best collection of bathroom tiles at MyTiles. Find anti-skid floor tiles and waterproof wall tiles in various sizes and finishes. Best quality for your dream bathroom." />
+        <title>Bathroom Tiles | Designer & Anti-Skid Bathroom Wall & Floor Tiles - Ceragreslux</title>
+        <meta name="description" content="Shop the best collection of bathroom tiles at Ceragreslux. Find anti-skid floor tiles and waterproof wall tiles in various sizes and finishes. Best quality for your dream bathroom." />
         <meta name="keywords" content="bathroom tiles, bathroom wall tiles, bathroom floor tiles, anti-skid tiles, waterproof tiles, modern bathroom design" />
       </Helmet>
       <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">Bathroom Tiles Collection</h2>
