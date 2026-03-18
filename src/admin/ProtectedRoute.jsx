@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children }) => {
 
     const verifyAuth = async () => {
       try {
-        await axios.get('/api/auth/check', { withCredentials: true });
+        await axios.get('https://tile-backend-6xtp.onrender.com/api/auth/check', { withCredentials: true });
         if (isMounted) setIsAuthenticated(true);
       } catch (err) {
         if (isMounted) setIsAuthenticated(false);
