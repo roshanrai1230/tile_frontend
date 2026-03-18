@@ -5,7 +5,8 @@ import {
   HiOutlineCube,
   HiOutlineShoppingCart,
   HiOutlineMail,
-  HiOutlineDotsVertical,
+  HiOutlinePencil,
+  HiOutlineTrash,
   HiOutlinePlus
 } from "react-icons/hi";
 import AdminSidebar from "./AdminSidebar";
@@ -18,7 +19,8 @@ const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  const fetchProducts = () => {
+    setLoading(true);
     axios.get(`${API}/api/products/all`)
       .then((res) => {
         setProducts(res.data?.products || res.data || []);
@@ -28,7 +30,23 @@ const AdminDashboard = () => {
         console.error("Fetch error:", err);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    fetchProducts();
   }, []);
+
+  const handleDelete = async (id, name) => {
+    if (!window.confirm(`Are you sure you want to delete "${name}"?`)) return;
+    try {
+      await axios.delete(`${API}/api/products/${id}`, { withCredentials: true });
+      setProducts(products.filter(p => p._id !== id));
+      alert("Product deleted successfully!");
+    } catch (err) {
+      console.error("Delete error:", err);
+      alert("Failed to delete product: " + (err.response?.data?.message || err.message));
+    }
+  };
 
   const stats = [
     { label: "Total Products", value: products.length, icon: <HiOutlineCube />, color: "text-blue-500", bg: "bg-blue-50" },
@@ -40,10 +58,8 @@ const AdminDashboard = () => {
     <div className="flex min-h-screen bg-slate-50">
       <AdminSidebar />
 
-      {/* Main Content Area — Offset by Sidebar width (256px = w-64) */}
       <main className="flex-1 ml-64 p-8 md:p-10 max-h-screen overflow-y-auto">
         
-        {/* Header */}
         <AdminHeader 
           title="Dashboard Overview" 
           subtitle="Welcome back, here's what's happening today." 
@@ -57,7 +73,6 @@ const AdminDashboard = () => {
           }
         />
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           {stats.map((stat, idx) => (
             <div key={idx} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex items-center gap-5">
@@ -74,7 +89,6 @@ const AdminDashboard = () => {
           ))}
         </div>
 
-        {/* Recent Products Table */}
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           <div className="px-6 py-5 border-b border-slate-100 flex justify-between items-center">
             <h2 className="text-lg font-bold text-slate-800">Recently Added Products</h2>
@@ -99,7 +113,7 @@ const AdminDashboard = () => {
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-4">
                         <img
-                          src={item.images?.[0] || "https://via.placeholder.com/50"}
+                          src={item.images?.[0]?.startsWith('http') ? item.images[0] : `${API}${item.images?.[0]}` || "https://via.placeholder.com/50"}
                           alt={item.name}
                           className="w-12 h-12 rounded-lg object-cover bg-slate-100"
                         />
@@ -112,12 +126,25 @@ const AdminDashboard = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4 font-bold text-slate-900">
-                      ${item.priceSqFt?.toFixed(2) || "N/A"}
+                      ₹{item.priceSqFt?.toFixed(2) || "N/A"}
                     </td>
                     <td className="px-6 py-4 text-right">
-                      <button className="p-2 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
-                        <HiOutlineDotsVertical className="text-lg" />
-                      </button>
+                      <div className="flex items-center justify-end gap-2">
+                        <button 
+                          onClick={() => navigate(`/admin/upload?edit=${item._id}`)}
+                          className="p-2 text-blue-500 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+                          title="Edit Product"
+                        >
+                          <HiOutlinePencil className="text-lg" />
+                        </button>
+                        <button 
+                          onClick={() => handleDelete(item._id, item.name)}
+                          className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                          title="Delete Product"
+                        >
+                          <HiOutlineTrash className="text-lg" />
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

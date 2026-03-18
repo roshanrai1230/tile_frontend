@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import AdminSidebar from "./AdminSidebar";
 import AdminHeader from "./AdminHeader";
-import { HiOutlinePlus, HiOutlineViewGrid } from "react-icons/hi";
+import { HiOutlinePlus, HiOutlineViewGrid, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi";
 
 function AdminUpload() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [activeTab, setActiveTab] = useState("list"); // 'list' | 'add'
+  const [editingId, setEditingId] = useState(null);
   const [productsList, setProductsList] = useState([]);
   const [loadingList, setLoadingList] = useState(true);
 
@@ -34,6 +37,14 @@ function AdminUpload() {
     }
   }, [activeTab]);
 
+  // Handle edit from URL param
+  useEffect(() => {
+    const editId = searchParams.get('edit');
+    if (editId) {
+      loadProductForEdit(editId);
+    }
+  }, [searchParams]);
+
   const fetchProducts = async () => {
     setLoadingList(true);
     try {
@@ -43,6 +54,39 @@ function AdminUpload() {
       console.error("Failed to fetch products", err);
     } finally {
       setLoadingList(false);
+    }
+  };
+
+  const loadProductForEdit = async (id) => {
+    try {
+      const res = await axios.get(`https://tile-backend-6xtp.onrender.com/api/products/${id}`);
+      const p = res.data;
+      setProduct({
+        name: p.name || "",
+        category: p.category || "BATHROOM",
+        description: p.description || "",
+        priceSqFt: p.priceSqFt || "",
+        priceBox: p.priceBox || "",
+      });
+      setSizes(p.sizes || []);
+      setColors(p.colors || []);
+      setEditingId(id);
+      setActiveTab("add");
+    } catch (err) {
+      console.error("Failed to load product for editing", err);
+      alert("Failed to load product for editing");
+    }
+  };
+
+  const handleDelete = async (id, name) => {
+    if (!window.confirm(`Are you sure you want to delete "${name}"?`)) return;
+    try {
+      await axios.delete(`https://tile-backend-6xtp.onrender.com/api/products/${id}`, { withCredentials: true });
+      setProductsList(productsList.filter(p => p._id !== id));
+      alert("Product deleted successfully!");
+    } catch (err) {
+      console.error("Delete error:", err);
+      alert("Failed to delete: " + (err.response?.data?.message || err.message));
     }
   };
 
@@ -93,13 +137,23 @@ function AdminUpload() {
     }
 
     try {
-      // Must use withCredentials true because /add is protected by admin middleware
-      await axios.post('https://tile-backend-6xtp.onrender.com/api/products/add', data, { withCredentials: true });
-      alert("Success! Product Uploaded.");
+      if (editingId) {
+        // Update existing product
+        await axios.put(`https://tile-backend-6xtp.onrender.com/api/products/${editingId}`, data, { withCredentials: true });
+        alert("Product updated successfully!");
+      } else {
+        // Create new product
+        await axios.post('https://tile-backend-6xtp.onrender.com/api/products/add', data, { withCredentials: true });
+        alert("Success! Product Uploaded.");
+      }
       // Reset form and switch to list tab
       setProduct({ name: "", category: "BATHROOM", description: "", priceSqFt: "", priceBox: "" });
+      setSizes(["300x300mm"]);
+      setColors([]);
       setImages([]);
       setPreviews([]);
+      setEditingId(null);
+      setSearchParams({});
       setActiveTab("list");
     } catch (error) {
       console.error("Submission Error:", error);
@@ -205,7 +259,22 @@ function AdminUpload() {
                             </span>
                           </td>
                           <td className="p-4 pr-6 text-right">
-                            <button className="text-sm font-bold text-blue-600 hover:text-blue-700 opacity-0 group-hover:opacity-100 transition-opacity">Edit</button>
+                            <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                              <button 
+                                onClick={() => loadProductForEdit(prod._id)}
+                                className="p-2 text-blue-500 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
+                                title="Edit Product"
+                              >
+                                <HiOutlinePencil className="text-lg" />
+                              </button>
+                              <button 
+                                onClick={() => handleDelete(prod._id, prod.name)}
+                                className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                                title="Delete Product"
+                              >
+                                <HiOutlineTrash className="text-lg" />
+                              </button>
+                            </div>
                           </td>
                         </tr>
                       ))}
@@ -417,19 +486,37 @@ function AdminUpload() {
                 </div>
 
                 {/* Actions */}
-                <div className="pt-6">
+                <div className="pt-6 flex gap-4">
+                  {editingId && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setEditingId(null);
+                        setSearchParams({});
+                        setProduct({ name: "", category: "BATHROOM", description: "", priceSqFt: "", priceBox: "" });
+                        setSizes(["300x300mm"]);
+                        setColors([]);
+                        setImages([]);
+                        setPreviews([]);
+                        setActiveTab("list");
+                      }}
+                      className="px-8 py-4 bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold rounded-none transition-all"
+                    >
+                      Cancel Edit
+                    </button>
+                  )}
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full bg-slate-900 hover:bg-blue-600 text-white font-bold py-4 rounded-none shadow-lg shadow-slate-200 transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'active:scale-[0.99]'}`}
+                    className={`flex-1 bg-slate-900 hover:bg-blue-600 text-white font-bold py-4 rounded-none shadow-lg shadow-slate-200 transition-all flex items-center justify-center gap-2 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'active:scale-[0.99]'}`}
                   >
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        Uploading...
+                        {editingId ? 'Updating...' : 'Uploading...'}
                       </span>
                     ) : (
-                      "Publish Product to Store"
+                      editingId ? "Update Product" : "Publish Product to Store"
                     )}
                   </button>
                 </div>
