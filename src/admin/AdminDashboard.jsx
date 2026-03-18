@@ -59,10 +59,10 @@ const AdminDashboard = () => {
       <AdminSidebar />
 
       <main className="flex-1 ml-64 p-8 md:p-10 max-h-screen overflow-y-auto">
-        
-        <AdminHeader 
-          title="Dashboard Overview" 
-          subtitle="Welcome back, here's what's happening today." 
+
+        <AdminHeader
+          title="Dashboard Overview"
+          subtitle="Welcome back, here's what's happening today."
           action={
             <button
               onClick={() => navigate("/admin/upload")}
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
               View All
             </button>
           </div>
-          
+
           <div className="overflow-x-auto">
             <table className="w-full text-sm text-left">
               <thead className="bg-slate-50 text-slate-500 font-semibold border-b border-slate-100">
@@ -130,14 +130,14 @@ const AdminDashboard = () => {
                     </td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex items-center justify-end gap-2">
-                        <button 
+                        <button
                           onClick={() => navigate(`/admin/upload?edit=${item._id}`)}
                           className="p-2 text-blue-500 hover:text-blue-700 hover:bg-blue-50 rounded-lg transition-colors"
                           title="Edit Product"
                         >
                           <HiOutlinePencil className="text-lg" />
                         </button>
-                        <button 
+                        <button
                           onClick={() => handleDelete(item._id, item.name)}
                           className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                           title="Delete Product"
